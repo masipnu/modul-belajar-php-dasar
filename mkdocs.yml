@@ -1,0 +1,103 @@
+# Project information
+site_name: Belajar PHP Dasar
+# site_url: https://masipnu.github.io/tutorial-mysql
+site_author: Ipnu Masyaid
+site_description: >-
+  Belajar dasar-dasar bahasa pemrograman PHP.
+nav:
+  - Beranda: index.md
+  - Mengenal PHP: 01.md
+  - Dasar-dasar PHP: 02.md
+  - Function: 03.md
+  - Variabel Superglobal: 04.md
+  - Session: 05.md
+  - Cookie: 07.md
+  - Form: 08.md
+  - Database: 09.md
+  - Praktik Aplikasi: 10.md
+  - Penutup: end.md
+theme:
+  icon:
+    logo: material/book
+    # Logo Notifikasi
+    admonition:
+      note: fontawesome/solid/note-sticky
+      abstract: fontawesome/solid/book
+      info: fontawesome/solid/circle-info
+      tip: fontawesome/solid/bullhorn
+      success: fontawesome/solid/check
+      question: fontawesome/solid/circle-question
+      warning: fontawesome/solid/triangle-exclamation
+      failure: fontawesome/solid/bomb
+      danger: fontawesome/solid/skull
+      bug: fontawesome/solid/robot
+      example: fontawesome/solid/flask
+      quote: fontawesome/solid/quote-left
+
+  favicon: images/book.svg
+  name: material
+  font:
+    text: Open Sans
+    code: JetBrains Mono
+  palette:
+    # Palette toggle for automatic mode
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/brightness-auto
+        name: Mode terang
+
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default 
+      toggle:
+        icon: material/brightness-7
+        name: Mode gelap
+
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Mode otomatis
+
+  features:
+    - navigation.instant
+    - navigation.instant.prefetch
+    # - navigation.tabs
+    # - navigation.footer
+    - content.code.copy
+    - content.code.select
+    # - toc.integrate
+    - navigation.top
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences
+  - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+# Ekstensi Keyboard
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+  
+# Notification Banner
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/masipnu
+    - icon: fontawesome/brands/instagram
+      link: https://instagram.com/masipnu
+    - icon: fontawesome/brands/linkedin
+      link: https://id.linkedin.com/in/ipnu-masyaid-8a6629177
+  generator: false
+copyright: Made with <span style="color:red">❤</span> by Masipnu | &copy; 2024
