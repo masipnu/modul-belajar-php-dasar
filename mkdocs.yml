@@ -11,10 +11,10 @@ nav:
   - Function: 03.md
   - Variabel Superglobal: 04.md
   - Session: 05.md
-  - Cookie: 07.md
-  - Form: 08.md
-  - Database: 09.md
-  - Praktik Aplikasi: 10.md
+  - Cookie: 06.md
+  - Form: 07.md
+  - Database: 08.md
+  - Praktik Aplikasi: 09.md
   - Penutup: end.md
 theme:
   icon:
