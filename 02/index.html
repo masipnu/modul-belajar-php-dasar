@@ -1198,22 +1198,22 @@
 <tr>
 <td style="text-align: center;">++$x</td>
 <td style="text-align: center;">Pre-increment</td>
-<td>Menambahkan variabel \$x dengan 1, lalu mengembalikan nilai $x</td>
+<td>Menambahkan variabel $x dengan 1, lalu mengembalikan nilai $x</td>
 </tr>
 <tr>
 <td style="text-align: center;">$x++</td>
 <td style="text-align: center;">Post-increment</td>
-<td>Mengembalikan variabel \$x, kemudian menambahkan nilai $x dengan 1</td>
+<td>Mengembalikan variabel $x, kemudian menambahkan nilai $x dengan 1</td>
 </tr>
 <tr>
 <td style="text-align: center;">--$x</td>
 <td style="text-align: center;">Pre-decrement</td>
-<td>Mengurangi variabel \$x dengan 1, lalu mengembalikan nilai $x</td>
+<td>Mengurangi variabel $x dengan 1, lalu mengembalikan nilai $x</td>
 </tr>
 <tr>
 <td style="text-align: center;">$x--</td>
 <td style="text-align: center;">Post-decrement</td>
-<td>Mengembalikan variabel \$x, kemudian mengurangi dengan 1</td>
+<td>Mengembalikan variabel $x, kemudian mengurangi dengan 1</td>
 </tr>
 </tbody>
 </table>
@@ -1229,33 +1229,33 @@
 </thead>
 <tbody>
 <tr>
-<td>\$x = $y</td>
-<td>\$x = $y</td>
+<td>$x = $y</td>
+<td>$x = $y</td>
 <td>Nilai x sama dengan nilai y</td>
 </tr>
 <tr>
-<td>\$x += $y</td>
-<td>\$x = \$x + $y</td>
+<td>$x += $y</td>
+<td>$x = $x + $y</td>
 <td>Nilai x ditambahkan dengan nilai y</td>
 </tr>
 <tr>
-<td>\$x -= $y</td>
-<td>\$x = \$x - $y</td>
+<td>$x -= $y</td>
+<td>$x = $x - $y</td>
 <td>Nilai x dikurangi dengan nilai y</td>
 </tr>
 <tr>
-<td>\$x *= $y</td>
-<td>\$x = \$x * $y</td>
+<td>$x *= $y</td>
+<td>$x = $x * $y</td>
 <td>Nilai x dikalikan dengan nilai y</td>
 </tr>
 <tr>
-<td>\$x /= $y</td>
-<td>\$x = \$x / $y</td>
+<td>$x /= $y</td>
+<td>$x = $x / $y</td>
 <td>Nilai x dibagi dengan nilai y</td>
 </tr>
 <tr>
-<td>\$x %= $y</td>
-<td>\$x = \$x % $y</td>
+<td>$x %= $y</td>
+<td>$x = $x % $y</td>
 <td>Nilai x modulus dengan nilai y</td>
 </tr>
 </tbody>
@@ -1336,14 +1336,425 @@
 <li>Kesalahan dalam penggunaan statement control mungkin tidak menampilkan pesan error, tetapi aplikasi tidak berjalan sesuai semestinya.</li>
 </ul>
 <h3 id="percabangan-if">Percabangan <code>IF</code></h3>
+<p>Statement control ini digunakan untuk menjalankan suatu program tertentu jika sebuah sayrat kondisi terpenuhi. Formatnya adalah...</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="x">if (kondisi) statement;</span>
+</code></pre></div>
+<p>Contoh:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="nv">$login</span> <span class="o">=</span> <span class="k">true</span><span class="p">;</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="k">if</span><span class="p">(</span><span class="nv">$login</span><span class="p">)</span> <span class="k">echo</span> <span class="s2">&quot;Selamat Datang&quot;</span><span class="p">;</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="cp">?&gt;</span>
+</code></pre></div>
+<p>Format di atas berlaku jika statement-nya hanya satu baris. Jika lebih dari satu baris, maka statement-nya menjadi:</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="x">if (kondisi){</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="x">    statement1;</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="x">    statement2;</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="x">    // dan seterusnya...</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="x">}</span>
+</code></pre></div>
+Contoh:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="nv">$nama</span> <span class="o">=</span> <span class="s2">&quot;Joko&quot;</span><span class="p">;</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="nv">$nilai</span> <span class="o">=</span> <span class="mi">80</span><span class="p">;</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="k">if</span><span class="p">(</span><span class="nv">$nilai</span> <span class="o">&gt;=</span> <span class="mi">80</span><span class="p">){</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>    <span class="k">echo</span> <span class="s2">&quot;Selamat </span><span class="si">$nama</span><span class="s2">,&quot;</span><span class="p">;</span>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>    <span class="k">echo</span> <span class="s2">&quot;Anda dinyatakan lulus..!&quot;</span><span class="p">;</span>
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="p">}</span>
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="k">if</span><span class="p">(</span><span class="nv">$nilai</span> <span class="o">&lt;</span> <span class="mi">80</span><span class="p">){</span>
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>    <span class="k">echo</span> <span class="s2">&quot;Maaf </span><span class="si">$nama</span><span class="s2">,&quot;</span><span class="p">;</span>
+<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>    <span class="k">echo</span> <span class="s2">&quot;Anda dinyatakan belum lulus..!&quot;</span><span class="p">;</span>
+<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a><span class="p">}</span>
+<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a><span class="cp">?&gt;</span>
+</code></pre></div>
+<div class="admonition bug">
+<p class="admonition-title">Testing</p>
+<p>Sekarang coba ubah nilai 80 menjadi 70 dan jalankan skripnya. Apa hasilnya?</p>
+</div>
 <h3 id="percabangan-if-else">Percabangan <code>IF-ELSE</code></h3>
+<p>Statement control ini digunakan menjalankan program tertentu jika sebuah kondisi terpenuhi, sekaligus menyediakan alternatif lain jika kondisi tidak terpenuhi. Format penulisannya adalah</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="k">if</span><span class="p">(</span><span class="nx">kondisi</span><span class="p">){</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>    <span class="c1">// statement jika benar</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>    <span class="nx">statement1</span><span class="p">;</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>    <span class="nx">statement2</span><span class="p">;</span>
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="p">}</span><span class="k">else</span><span class="p">{</span>
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>    <span class="c1">// statement jika salah</span>
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>    <span class="nx">statement1</span><span class="p">;</span>
+<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>    <span class="nx">statement2</span><span class="p">;</span>
+<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a><span class="p">}</span>
+<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a><span class="cp">?&gt;</span>
+</code></pre></div>
+<p>Format di atas digunakan jika statement-nya lebihd dari satu, namun jika statement-nya hanya satu, bisa menggunaka format berikut.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="k">if</span><span class="p">(</span><span class="nx">kondisi</span><span class="p">)</span> <span class="c1">//statement jika benar;</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="k">else</span> <span class="c1">//statement jika salah;</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="cp">?&gt;</span>
+</code></pre></div>
+<p>Mari kita buat contohnya.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="c1">// statement 1 baris</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="nv">$nilai</span> <span class="o">=</span> <span class="mi">80</span><span class="p">;</span>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="k">if</span><span class="p">(</span><span class="nv">$nilai</span><span class="o">&gt;=</span><span class="mi">80</span><span class="p">)</span> <span class="k">echo</span> <span class="s2">&quot;Anda lulus&quot;</span><span class="p">;</span>
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="k">else</span> <span class="k">echo</span> <span class="s2">&quot;Maaf, anda belum lulus&quot;</span><span class="p">;</span>
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="c1">// statement 2 baris</span>
+<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="nv">$nilai</span> <span class="o">=</span> <span class="mi">70</span><span class="p">;</span>
+<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a><span class="k">if</span><span class="p">(</span><span class="nv">$nilai</span> <span class="o">&gt;=</span> <span class="mi">80</span><span class="p">){</span>
+<a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a>    <span class="k">echo</span> <span class="s2">&quot;Selamat, Anda lulus&quot;</span><span class="p">;</span>
+<a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a><span class="p">}</span><span class="k">else</span><span class="p">{</span>
+<a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a>    <span class="k">echo</span> <span class="s2">&quot;Maaf, Anda belum lulus&quot;</span><span class="p">;</span>
+<a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a><span class="p">}</span>
+<a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a><span class="cp">?&gt;</span>
+</code></pre></div>
 <h3 id="percabangan-if-elseif-else">Percabangan <code>IF-ELSEIF-ELSE</code></h3>
+<ul>
+<li>Statement control ini digunakan untuk mengecek kondisi berikutnya ketika kondisi pertama tidak terpenuhi.</li>
+<li>Jika semua kondisi tidak terpenuhi, maka dijalankan statement setelah <code>else</code>.</li>
+</ul>
+<p>Format sintakasnya</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="k">if</span><span class="p">(</span><span class="nx">kondisi1</span><span class="p">){</span>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>    <span class="c1">// statement jika kondisi 1 benar</span>
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="p">}</span><span class="k">elseif</span><span class="p">(</span><span class="nx">kondisi2</span><span class="p">){</span>
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>    <span class="c1">// statement jika kondisi 2 benar</span>
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="p">}</span><span class="k">else</span><span class="p">{</span>
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>    <span class="c1">// statement jika semua kondisi salah</span>
+<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="p">}</span>
+<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a><span class="cp">?&gt;</span>
+</code></pre></div>
+<p><strong>MARKICOB</strong> (Mari kita coba...😊)</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="nv">$nilai</span> <span class="o">=</span> <span class="mi">85</span><span class="p">;</span>
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="k">if</span><span class="p">(</span><span class="nv">$nilai</span><span class="o">&lt;</span><span class="mi">60</span><span class="p">){</span>
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>    <span class="k">echo</span> <span class="s2">&quot;Nilai : </span><span class="si">$nilai</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>    <span class="k">echo</span> <span class="s2">&quot;Grade : E&quot;</span><span class="p">;</span>  
+<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a><span class="p">}</span><span class="k">elseif</span><span class="p">(</span><span class="nv">$nilai</span><span class="o">&lt;</span><span class="mi">70</span><span class="p">){</span>
+<a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a>    <span class="k">echo</span> <span class="s2">&quot;Nilai : </span><span class="si">$nilai</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+<a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a>    <span class="k">echo</span> <span class="s2">&quot;Grade : D&quot;</span><span class="p">;</span>
+<a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a><span class="p">}</span><span class="k">elseif</span><span class="p">(</span><span class="nv">$nilai</span><span class="o">&lt;</span><span class="mi">80</span><span class="p">){</span>
+<a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a>    <span class="k">echo</span> <span class="s2">&quot;Nilai : </span><span class="si">$nilai</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+<a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a>    <span class="k">echo</span> <span class="s2">&quot;Grade : C&quot;</span><span class="p">;</span>
+<a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a><span class="p">}</span><span class="k">elseif</span><span class="p">(</span><span class="nv">$nilai</span><span class="o">&lt;</span><span class="mi">90</span><span class="p">){</span>
+<a id="__codelineno-14-14" name="__codelineno-14-14" href="#__codelineno-14-14"></a>    <span class="k">echo</span> <span class="s2">&quot;Nilai : </span><span class="si">$nilai</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+<a id="__codelineno-14-15" name="__codelineno-14-15" href="#__codelineno-14-15"></a>    <span class="k">echo</span> <span class="s2">&quot;Grade : B&quot;</span><span class="p">;</span>
+<a id="__codelineno-14-16" name="__codelineno-14-16" href="#__codelineno-14-16"></a><span class="p">}</span><span class="k">elseif</span><span class="p">(</span><span class="nv">$nilai</span><span class="o">&lt;=</span><span class="mi">100</span><span class="p">){</span>
+<a id="__codelineno-14-17" name="__codelineno-14-17" href="#__codelineno-14-17"></a>    <span class="k">echo</span> <span class="s2">&quot;Nilai : A&quot;</span><span class="p">;</span>
+<a id="__codelineno-14-18" name="__codelineno-14-18" href="#__codelineno-14-18"></a><span class="p">}</span><span class="k">else</span><span class="p">{</span>
+<a id="__codelineno-14-19" name="__codelineno-14-19" href="#__codelineno-14-19"></a>    <span class="k">echo</span> <span class="s2">&quot;Maaf nilai tidak sah&quot;</span><span class="p">;</span>
+<a id="__codelineno-14-20" name="__codelineno-14-20" href="#__codelineno-14-20"></a><span class="p">}</span>
+<a id="__codelineno-14-21" name="__codelineno-14-21" href="#__codelineno-14-21"></a><span class="cp">?&gt;</span>
+</code></pre></div>
+<div class="admonition example">
+<p class="admonition-title">Eksperimen</p>
+<p>Sekarang agar lebih interaktif, coba tambahkan fungsi php untuk mengambil input user, yaitu dengan mengganti <code>$nilai = 80;</code> menjadi
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="k">echo</span> <span class="s2">&quot;Masukkan nilai : &quot;</span><span class="p">;</span>
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="nv">$nilai</span> <span class="o">=</span> <span class="nb">fgets</span><span class="p">(</span><span class="nx">STDIN</span><span class="p">);</span>
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="cp">?&gt;</span>
+</code></pre></div></p>
+</div>
 <h3 id="percabangan-switch">Percabangan <code>SWITCH</code></h3>
+<ul>
+<li>Statement control ini digunakan untuk menjalankan program pada setiap kemungkinan nilai dari sebuah  variabel.</li>
+<li>Ini fungsinya hampir sama dengan <code>IF</code>, namun untuk penggunaan yang lebih sederhana.</li>
+</ul>
+<p>Formatnya adalah</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="k">switch</span><span class="p">(</span><span class="nv">$variabel</span><span class="p">){</span>
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>    <span class="k">case</span> <span class="s2">&quot;option1&quot;</span><span class="o">:</span> <span class="nx">statement1</span><span class="p">;</span>
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>    <span class="k">break</span><span class="p">;</span>
+<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>    <span class="k">case</span> <span class="s2">&quot;option2&quot;</span><span class="o">:</span> <span class="nx">statement2</span><span class="p">;</span>
+<a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a>    <span class="k">break</span><span class="p">;</span>
+<a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a>    <span class="k">default</span><span class="o">:</span> <span class="nx">statement3</span><span class="p">;</span>
+<a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a>    <span class="k">break</span><span class="p">;</span>
+<a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a><span class="p">}</span>
+<a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a><span class="cp">?&gt;</span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Catatan</p>
+<ul>
+<li>Statement pada <code>default</code> akan dijalankan ketika semua option sebelumnya tidak terpenuhi.</li>
+<li>Setiap statement harus dikuti dengan <code>break;</code> untuk menghentikan proses pengecekan kepada option selanjutnya.</li>
+</ul>
+</div>
+<p>Berikut contohnya</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="nv">$kode</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="k">switch</span><span class="p">(</span><span class="nv">$kode</span><span class="p">){</span>
+<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>    <span class="k">case</span> <span class="mi">1</span><span class="o">:</span>
+<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a>        <span class="k">echo</span> <span class="s2">&quot;Selamat datang Admin&quot;</span><span class="p">;</span>
+<a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a>        <span class="k">break</span><span class="p">;</span>
+<a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a>    <span class="k">case</span> <span class="mi">2</span><span class="o">:</span>
+<a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a>        <span class="k">echo</span> <span class="s2">&quot;Selamat datang User&quot;</span><span class="p">;</span>
+<a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a>        <span class="k">break</span><span class="p">;</span>
+<a id="__codelineno-17-11" name="__codelineno-17-11" href="#__codelineno-17-11"></a>    <span class="k">case</span> <span class="mi">3</span><span class="o">:</span>
+<a id="__codelineno-17-12" name="__codelineno-17-12" href="#__codelineno-17-12"></a>        <span class="k">echo</span> <span class="s2">&quot;Selamat datang Tamu&quot;</span><span class="p">;</span>
+<a id="__codelineno-17-13" name="__codelineno-17-13" href="#__codelineno-17-13"></a>        <span class="k">break</span><span class="p">;</span>
+<a id="__codelineno-17-14" name="__codelineno-17-14" href="#__codelineno-17-14"></a>    <span class="k">default</span><span class="o">:</span>
+<a id="__codelineno-17-15" name="__codelineno-17-15" href="#__codelineno-17-15"></a>        <span class="k">echo</span> <span class="s2">&quot;Maaf, Akses ditolak..!&quot;</span><span class="p">;</span>
+<a id="__codelineno-17-16" name="__codelineno-17-16" href="#__codelineno-17-16"></a>        <span class="k">break</span><span class="p">;</span>
+<a id="__codelineno-17-17" name="__codelineno-17-17" href="#__codelineno-17-17"></a><span class="p">}</span>
+<a id="__codelineno-17-18" name="__codelineno-17-18" href="#__codelineno-17-18"></a><span class="cp">?&gt;</span>
+</code></pre></div>
+<div class="admonition example">
+<p class="admonition-title">Percobaan</p>
+<p>Seperti sebelumnya, agar lebih interaktif, coba buat aagr nilai <code>$kode</code> diinput langsung dari user dan sebelumnya tampilkan teks <code>Masukkan Kode Rahasia</code>.</p>
+</div>
 <h3 id="perulangan-while">Perulangan <code>WHILE</code></h3>
+<p>While digunakan untuk menjalankan program secara berulang-ulang selama kondisi masih terpenuhi. Format penulisannya adalah</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="k">while</span><span class="p">(</span><span class="nx">kondisi</span><span class="p">){</span>
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>    <span class="nx">statement</span><span class="p">;</span>
+<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="p">}</span>
+<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="cp">?&gt;</span>
+</code></pre></div>
+<p>Mari kita buat contohnya</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="nv">$no</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="k">while</span><span class="p">(</span><span class="nv">$no</span> <span class="o">&lt;=</span> <span class="mi">10</span><span class="p">){</span>
+<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a>    <span class="k">echo</span> <span class="s2">&quot;Antrian ke-</span><span class="si">$no</span><span class="s2"> </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+<a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a>    <span class="nv">$no</span><span class="o">++</span><span class="p">;</span>
+<a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a><span class="p">}</span>
+<a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a><span class="cp">?&gt;</span>
+</code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Peringatan</p>
+<ul>
+<li>Hati-hati dalam membuat perulangan, baik <strong>while</strong> atau yang lain, pastikan kamu membuat counter dan batas perulangannya, karena kalau tidak, bisa saja perulangan kamu akan terus dilakukan sampai memori komputer penuh yang akhirnya membuat komputer kamu mati.</li>
+<li>Dalam contoh di atas, betasan perulangannya adalah <code>$no &lt;=10</code> dan penambah counter <code>$no++</code>.</li>
+<li>Kalau program dijalankan dengan terminal/ command promt, cara menghentikannya adalah dengan menekan tombol <kbd>CTRL</kbd> + <kbd>C</kbd>, tetapi jika perulangan dijalankan di sisi server menggunakan browser, bisa-bisa servernya yang terjadi <em>memory overflow</em> dan mati.</li>
+</ul>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Percobaan</p>
+<ul>
+<li>Sekarang coba buat sebuah perkalian berulang seperti dulu ketika kamu masih di bangku sekolah dasar kamu diminta untuk menghafalkan daftar perkalian!, masih ingat?</li>
+<li>Contoh hasilnya seperti berikut
+<img alt="tabel-perkalian" src="../images/tabel-perkalian.png" /></li>
+</ul>
+</div>
 <h3 id="perulangan-do-while">Perulangan <code>DO-WHILE</code></h3>
+<ul>
+<li>Hampir sama seperti <strong>wbile</strong>, statement control ini digunakan untuk menjalankan program secara berulang-ulang selama kondisi terpenuhi.</li>
+<li>Bedanya, kalau <strong>do-while</strong>, statement-nya dijalankan terlebih dahulu, tanpa harus mengecek kondisinya terlebih dahulu.</li>
+<li>Hal ini memungkinkan perulangan <strong>do-while</strong> melakukan minimal 1 kali, walaupun kondisinya tidak terpenuhi.</li>
+</ul>
+<p>Format sintaksnya adalah</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="k">do</span><span class="p">{</span>
+<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>    <span class="nx">statement</span><span class="p">;</span>
+<a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a><span class="p">}</span><span class="k">while</span><span class="p">(</span><span class="nx">kondisi</span><span class="p">);</span>
+<a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a><span class="cp">?&gt;</span>
+</code></pre></div>
+<p>Berikut contohnya</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="nv">$angka</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span>
+<a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="k">do</span><span class="p">{</span>
+<a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a>    <span class="k">echo</span> <span class="s2">&quot;Hitungan ke </span><span class="si">$angka</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+<a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a>    <span class="nv">$angka</span><span class="o">++</span><span class="p">;</span>
+<a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a><span class="p">}</span><span class="k">while</span><span class="p">(</span><span class="nv">$angka</span><span class="o">&lt;=</span><span class="mi">10</span><span class="p">);</span>
+<a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a><span class="cp">?&gt;</span>
+</code></pre></div>
+<p>Perulangan di atas dirasa agak aneh, padahal kan perulangannya, harusnya dilakukan ketika variabel <code>$angka</code> bernilai lebih kecil atau sama dengan 10, namun begitulah cara kerja perulangan <strong>do-while</strong>.</p>
 <h3 id="perulangan-for">Perulangan <code>FOR</code></h3>
+<ul>
+<li>Secara prinsip, statement control ini sama seperti perulangan while dan do-while.</li>
+<li>Namun, saat menggunakan perulangan <strong>for</strong>, kita langsung menentukan batas awal dan akhir perulangannya.</li>
+<li>Formatnya sebagai berikut.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="k">for</span><span class="p">(</span><span class="nx">init_statement</span> <span class="p">;</span> <span class="nx">kondisi</span> <span class="p">;</span> <span class="nx">post_statement</span><span class="p">){</span>
+<a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a>    <span class="c1">// blok perulangan</span>
+<a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a><span class="p">}</span>
+<a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a><span class="cp">?&gt;</span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Catatan</p>
+<ul>
+<li>Init statement akan dieksekusi hanya sekali di awal sebelum perulangan</li>
+<li>Kondisi akan dilakukan pengecekan dalam setiap perulangan, jika true perulangan akan dilakukan, jika false perulangan akan berhenti</li>
+<li>Post statement akan dieksekusi setiap kali diakhir perulangan</li>
+<li>Init statement, Kondisi dan Post Statement tidak wajib diisi, jika Kondisi tidak diisi, berarti kondisi selalu bernilai true</li>
+</ul>
+</div>
+<p><strong>Contoh-1</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="c1">// Perulangan for tanpa henti</span>
+<a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="k">for</span><span class="p">(;;){</span>
+<a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a>    <span class="k">echo</span> <span class="s2">&quot;Saya berjanji tidak akan membolos lagi</span><span class="se">\n\n</span><span class="s2">&quot;</span><span class="p">;</span>
+<a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a><span class="p">}</span>
+<a id="__codelineno-23-6" name="__codelineno-23-6" href="#__codelineno-23-6"></a><span class="cp">?&gt;</span>
+</code></pre></div></p>
+<p><strong>Contoh-2</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a><span class="c1">// Perulangan for dengan kondisi</span>
+<a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a><span class="nv">$counter</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a><span class="k">for</span><span class="p">(;</span><span class="nv">$counter</span><span class="o">&lt;=</span><span class="mi">10</span><span class="p">;){</span>
+<a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a>    <span class="k">echo</span> <span class="s2">&quot;Antrian ke-</span><span class="si">$counter</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+<a id="__codelineno-24-6" name="__codelineno-24-6" href="#__codelineno-24-6"></a>    <span class="nv">$counter</span><span class="o">++</span><span class="p">;</span>
+<a id="__codelineno-24-7" name="__codelineno-24-7" href="#__codelineno-24-7"></a><span class="p">}</span>
+<a id="__codelineno-24-8" name="__codelineno-24-8" href="#__codelineno-24-8"></a><span class="cp">?&gt;</span>
+</code></pre></div>
+<strong>Contoh-3</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a><span class="c1">// Perulangan for dengan init statement</span>
+<a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a><span class="k">for</span><span class="p">(</span><span class="nv">$counter</span><span class="o">=</span><span class="mi">11</span><span class="p">;</span> <span class="nv">$counter</span><span class="o">&lt;=</span><span class="mi">25</span><span class="p">;){</span>
+<a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a>    <span class="k">echo</span> <span class="s2">&quot;Antrian ke : </span><span class="si">$counter</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+<a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a>    <span class="nv">$counter</span><span class="o">++</span><span class="p">;</span>
+<a id="__codelineno-25-6" name="__codelineno-25-6" href="#__codelineno-25-6"></a><span class="p">}</span>
+<a id="__codelineno-25-7" name="__codelineno-25-7" href="#__codelineno-25-7"></a><span class="cp">?&gt;</span>
+</code></pre></div></p>
+<p><strong>Contoh-4</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a><span class="c1">// Perulangan for dengan post-statement</span>
+<a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a><span class="k">for</span><span class="p">(</span><span class="nv">$i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span> <span class="nv">$i</span><span class="o">&lt;=</span><span class="mi">100</span><span class="p">;</span> <span class="nv">$i</span><span class="o">++</span><span class="p">){</span>
+<a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a>    <span class="k">echo</span> <span class="s2">&quot;Antrian Sembako ke-</span><span class="si">$i</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+<a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a><span class="p">}</span>
+<a id="__codelineno-26-6" name="__codelineno-26-6" href="#__codelineno-26-6"></a><span class="cp">?&gt;</span>
+</code></pre></div></p>
 <h3 id="perulangan-foreach">Perulangan <code>FOREACH</code></h3>
+<p>Statement control ini digunakan khusus untuk melakukan perulangan pada data array. Format penulisannya</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a><span class="k">foreach</span><span class="p">(</span><span class="nv">$variabel</span> <span class="k">as</span> <span class="nv">$alias</span><span class="p">){</span>
+<a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a>    <span class="nx">statement</span><span class="p">;</span>
+<a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a><span class="p">}</span>
+<a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a><span class="cp">?&gt;</span>
+</code></pre></div>
+<p>Jika jenis array-nya array asosiatif, maka formatnya</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a><span class="k">foreach</span><span class="p">(</span><span class="nv">$variabel</span> <span class="k">as</span> <span class="nv">$key</span> <span class="o">=&gt;</span> <span class="nv">$value</span><span class="p">){</span>
+<a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a>    <span class="nx">statement</span><span class="p">;</span>
+<a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a><span class="p">}</span>
+<a id="__codelineno-28-5" name="__codelineno-28-5" href="#__codelineno-28-5"></a><span class="cp">?&gt;</span>
+</code></pre></div>
+<p><strong>Contoh-1</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a><span class="c1">// Foreach array numerik</span>
+<a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a><span class="nv">$buah</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Jeruk&quot;</span><span class="p">,</span><span class="s2">&quot;Mangga&quot;</span><span class="p">,</span><span class="s2">&quot;Apel&quot;</span><span class="p">];</span>
+<a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a><span class="k">echo</span> <span class="s2">&quot;Es &quot;</span><span class="p">;</span>
+<a id="__codelineno-29-5" name="__codelineno-29-5" href="#__codelineno-29-5"></a><span class="k">foreach</span><span class="p">(</span><span class="nv">$buah</span> <span class="k">as</span> <span class="nv">$b</span><span class="p">){</span>
+<a id="__codelineno-29-6" name="__codelineno-29-6" href="#__codelineno-29-6"></a>    <span class="k">echo</span> <span class="s2">&quot;</span><span class="si">$b</span><span class="s2">, &quot;</span><span class="p">;</span>
+<a id="__codelineno-29-7" name="__codelineno-29-7" href="#__codelineno-29-7"></a><span class="p">}</span>
+<a id="__codelineno-29-8" name="__codelineno-29-8" href="#__codelineno-29-8"></a><span class="k">echo</span> <span class="s2">&quot;Sori nggak level..!😊&quot;</span><span class="p">;</span>
+<a id="__codelineno-29-9" name="__codelineno-29-9" href="#__codelineno-29-9"></a><span class="cp">?&gt;</span>
+</code></pre></div></p>
+<p>Jalankan dan baca dengan intonasi, xixixi 🤭</p>
+<p><strong>Contoh-2</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a><span class="c1">// Foreach dengan array asosiatif</span>
+<a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a><span class="nv">$siswa</span><span class="o">=</span><span class="p">[</span>
+<a id="__codelineno-30-4" name="__codelineno-30-4" href="#__codelineno-30-4"></a>    <span class="s2">&quot;nama&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;Dita Leni Ravia&quot;</span><span class="p">,</span>
+<a id="__codelineno-30-5" name="__codelineno-30-5" href="#__codelineno-30-5"></a>    <span class="s2">&quot;kelas&quot;</span> <span class="o">=&gt;</span> <span class="mi">11</span><span class="p">,</span>
+<a id="__codelineno-30-6" name="__codelineno-30-6" href="#__codelineno-30-6"></a>    <span class="s2">&quot;jurusan&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;PPLG&quot;</span>
+<a id="__codelineno-30-7" name="__codelineno-30-7" href="#__codelineno-30-7"></a><span class="p">];</span>
+<a id="__codelineno-30-8" name="__codelineno-30-8" href="#__codelineno-30-8"></a>
+<a id="__codelineno-30-9" name="__codelineno-30-9" href="#__codelineno-30-9"></a><span class="k">foreach</span><span class="p">(</span><span class="nv">$siswa</span> <span class="k">as</span> <span class="nv">$key</span> <span class="o">=&gt;</span> <span class="nv">$value</span><span class="p">){</span>
+<a id="__codelineno-30-10" name="__codelineno-30-10" href="#__codelineno-30-10"></a>    <span class="k">echo</span> <span class="s2">&quot;</span><span class="si">$key</span><span class="s2"> : </span><span class="si">$value</span><span class="s2"> </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+<a id="__codelineno-30-11" name="__codelineno-30-11" href="#__codelineno-30-11"></a><span class="p">}</span>
+<a id="__codelineno-30-12" name="__codelineno-30-12" href="#__codelineno-30-12"></a><span class="cp">?&gt;</span>
+</code></pre></div></p>
+<div class="admonition question">
+<p class="admonition-title">Tantangan</p>
+<ul>
+<li>Sekarang coba buat array 2 dimensi seperti berlikut, amati dengan baik, lalu gunakan perulangan foreach untuk menampilkan seluruh datanya. Clue-nya adalah <code>foreach bersarang</code>.
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a><span class="c1">// Foreach dengan array 2 dimensi</span>
+<a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a><span class="nv">$siswa</span><span class="o">=</span><span class="p">[</span>
+<a id="__codelineno-31-4" name="__codelineno-31-4" href="#__codelineno-31-4"></a>    <span class="p">[</span>
+<a id="__codelineno-31-5" name="__codelineno-31-5" href="#__codelineno-31-5"></a>        <span class="s2">&quot;nis&quot;</span> <span class="o">=&gt;</span> <span class="mi">881</span><span class="p">,</span>
+<a id="__codelineno-31-6" name="__codelineno-31-6" href="#__codelineno-31-6"></a>        <span class="s2">&quot;nama&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;Roro Jonggrang&quot;</span><span class="p">,</span>
+<a id="__codelineno-31-7" name="__codelineno-31-7" href="#__codelineno-31-7"></a>        <span class="s2">&quot;nilai&quot;</span> <span class="o">=&gt;</span> <span class="mi">95</span>
+<a id="__codelineno-31-8" name="__codelineno-31-8" href="#__codelineno-31-8"></a>    <span class="p">],</span>
+<a id="__codelineno-31-9" name="__codelineno-31-9" href="#__codelineno-31-9"></a>    <span class="p">[</span>
+<a id="__codelineno-31-10" name="__codelineno-31-10" href="#__codelineno-31-10"></a>        <span class="s2">&quot;nis&quot;</span> <span class="o">=&gt;</span> <span class="mi">882</span><span class="p">,</span>
+<a id="__codelineno-31-11" name="__codelineno-31-11" href="#__codelineno-31-11"></a>        <span class="s2">&quot;nama&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;Roro Kidul&quot;</span><span class="p">,</span>
+<a id="__codelineno-31-12" name="__codelineno-31-12" href="#__codelineno-31-12"></a>        <span class="s2">&quot;nilai&quot;</span> <span class="o">=&gt;</span> <span class="mi">100</span>
+<a id="__codelineno-31-13" name="__codelineno-31-13" href="#__codelineno-31-13"></a>    <span class="p">],</span>
+<a id="__codelineno-31-14" name="__codelineno-31-14" href="#__codelineno-31-14"></a>    <span class="p">[</span>
+<a id="__codelineno-31-15" name="__codelineno-31-15" href="#__codelineno-31-15"></a>        <span class="s2">&quot;nis&quot;</span> <span class="o">=&gt;</span> <span class="mi">883</span><span class="p">,</span>
+<a id="__codelineno-31-16" name="__codelineno-31-16" href="#__codelineno-31-16"></a>        <span class="s2">&quot;nama&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;Joko Tingkir&quot;</span><span class="p">,</span>
+<a id="__codelineno-31-17" name="__codelineno-31-17" href="#__codelineno-31-17"></a>        <span class="s2">&quot;nilai&quot;</span> <span class="o">=&gt;</span> <span class="mi">90</span>
+<a id="__codelineno-31-18" name="__codelineno-31-18" href="#__codelineno-31-18"></a>    <span class="p">]</span>
+<a id="__codelineno-31-19" name="__codelineno-31-19" href="#__codelineno-31-19"></a>    <span class="p">];</span>
+<a id="__codelineno-31-20" name="__codelineno-31-20" href="#__codelineno-31-20"></a><span class="cp">?&gt;</span>
+</code></pre></div></li>
+</ul>
+</div>
+<details class="success">
+<summary>Buka Jawaban</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a><span class="c1">// Foreach dengan array 2 dimensi</span>
+<a id="__codelineno-32-3" name="__codelineno-32-3" href="#__codelineno-32-3"></a><span class="nv">$siswa</span><span class="o">=</span><span class="p">[</span>
+<a id="__codelineno-32-4" name="__codelineno-32-4" href="#__codelineno-32-4"></a>    <span class="p">[</span>
+<a id="__codelineno-32-5" name="__codelineno-32-5" href="#__codelineno-32-5"></a>        <span class="s2">&quot;nis&quot;</span> <span class="o">=&gt;</span> <span class="mi">881</span><span class="p">,</span>
+<a id="__codelineno-32-6" name="__codelineno-32-6" href="#__codelineno-32-6"></a>        <span class="s2">&quot;nama&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;Roro Jonggrang&quot;</span><span class="p">,</span>
+<a id="__codelineno-32-7" name="__codelineno-32-7" href="#__codelineno-32-7"></a>        <span class="s2">&quot;nilai&quot;</span> <span class="o">=&gt;</span> <span class="mi">95</span>
+<a id="__codelineno-32-8" name="__codelineno-32-8" href="#__codelineno-32-8"></a>    <span class="p">],</span>
+<a id="__codelineno-32-9" name="__codelineno-32-9" href="#__codelineno-32-9"></a>    <span class="p">[</span>
+<a id="__codelineno-32-10" name="__codelineno-32-10" href="#__codelineno-32-10"></a>        <span class="s2">&quot;nis&quot;</span> <span class="o">=&gt;</span> <span class="mi">882</span><span class="p">,</span>
+<a id="__codelineno-32-11" name="__codelineno-32-11" href="#__codelineno-32-11"></a>        <span class="s2">&quot;nama&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;Roro Kidul&quot;</span><span class="p">,</span>
+<a id="__codelineno-32-12" name="__codelineno-32-12" href="#__codelineno-32-12"></a>        <span class="s2">&quot;nilai&quot;</span> <span class="o">=&gt;</span> <span class="mi">100</span>
+<a id="__codelineno-32-13" name="__codelineno-32-13" href="#__codelineno-32-13"></a>    <span class="p">],</span>
+<a id="__codelineno-32-14" name="__codelineno-32-14" href="#__codelineno-32-14"></a>    <span class="p">[</span>
+<a id="__codelineno-32-15" name="__codelineno-32-15" href="#__codelineno-32-15"></a>        <span class="s2">&quot;nis&quot;</span> <span class="o">=&gt;</span> <span class="mi">883</span><span class="p">,</span>
+<a id="__codelineno-32-16" name="__codelineno-32-16" href="#__codelineno-32-16"></a>        <span class="s2">&quot;nama&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;Joko Tingkir&quot;</span><span class="p">,</span>
+<a id="__codelineno-32-17" name="__codelineno-32-17" href="#__codelineno-32-17"></a>        <span class="s2">&quot;nilai&quot;</span> <span class="o">=&gt;</span> <span class="mi">90</span>
+<a id="__codelineno-32-18" name="__codelineno-32-18" href="#__codelineno-32-18"></a>    <span class="p">]</span>
+<a id="__codelineno-32-19" name="__codelineno-32-19" href="#__codelineno-32-19"></a>    <span class="p">];</span>
+<a id="__codelineno-32-20" name="__codelineno-32-20" href="#__codelineno-32-20"></a>
+<a id="__codelineno-32-21" name="__codelineno-32-21" href="#__codelineno-32-21"></a><span class="k">foreach</span><span class="p">(</span><span class="nv">$siswa</span> <span class="k">as</span> <span class="nv">$tokoh</span><span class="p">){</span>
+<a id="__codelineno-32-22" name="__codelineno-32-22" href="#__codelineno-32-22"></a>    <span class="k">foreach</span><span class="p">(</span><span class="nv">$tokoh</span> <span class="k">as</span> <span class="nv">$data</span> <span class="o">=&gt;</span> <span class="nv">$nilai</span><span class="p">){</span>
+<a id="__codelineno-32-23" name="__codelineno-32-23" href="#__codelineno-32-23"></a>        <span class="k">echo</span> <span class="s2">&quot;</span><span class="si">$data</span><span class="s2"> : </span><span class="si">$nilai</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+<a id="__codelineno-32-24" name="__codelineno-32-24" href="#__codelineno-32-24"></a>    <span class="p">}</span>
+<a id="__codelineno-32-25" name="__codelineno-32-25" href="#__codelineno-32-25"></a><span class="p">}</span>
+<a id="__codelineno-32-26" name="__codelineno-32-26" href="#__codelineno-32-26"></a><span class="cp">?&gt;</span>
+</code></pre></div>
+</details>
 <h2 id="modularitas">Modularitas</h2>
+<ul>
+<li>Saat membuat aplikasi, ada baiknya tidak dibuat dalam satu file
+Lebih baik dipisah ke beberapa file agar kode program tidak terlalu bertumpuk di satu file.</li>
+<li>PHP memiliki function <strong>require</strong> dan <strong>include</strong> yang bisa kita gunakan untuk mengambil file php lain.</li>
+<li>Lantas apa bedanya require dan include?</li>
+<li>Pada <strong>require</strong>, jika file yang kita ambil tidak ada, maka akan terjadi error dan program terhenti.</li>
+<li>Pada <strong>include</strong>, jika file yang kita ambil tidak ada, maka hanya akan memberi peringatan, namun program akan tetap dilanjutkan.</li>
+</ul>
+<p>Sebagai contoh, kita buat file pertama yaitu <strong>modul.php</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a><span class="k">echo</span> <span class="s2">&quot;Halo.., Ini pesan dari file modul.php&quot;</span>
+<a id="__codelineno-33-3" name="__codelineno-33-3" href="#__codelineno-33-3"></a><span class="cp">?&gt;</span>
+</code></pre></div>
+<p>Lalu kita buat file kedua, yaitu <strong>include.php</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-34-2" name="__codelineno-34-2" href="#__codelineno-34-2"></a><span class="k">echo</span> <span class="s2">&quot;Ini pesan dari file include.php </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+<a id="__codelineno-34-3" name="__codelineno-34-3" href="#__codelineno-34-3"></a><span class="k">include</span> <span class="s2">&quot;modul.php&quot;</span><span class="p">;</span>
+<a id="__codelineno-34-4" name="__codelineno-34-4" href="#__codelineno-34-4"></a><span class="cp">?&gt;</span>
+</code></pre></div>
+<p>Sekarang jalankan file <strong>include.php</strong>, maka perintah echo dari file <code>include.php</code> dan <code>modul.php</code> akan ditampilkan semuanya.</p>
+<p>Satu lagi, coba buat file <strong>require.php</strong> sebagai berikut.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-35-2" name="__codelineno-35-2" href="#__codelineno-35-2"></a><span class="k">require</span> <span class="s2">&quot;fungsi.php&quot;</span><span class="p">;</span>
+<a id="__codelineno-35-3" name="__codelineno-35-3" href="#__codelineno-35-3"></a><span class="k">echo</span> <span class="s2">&quot;ini pesan dari file require.php </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+<a id="__codelineno-35-4" name="__codelineno-35-4" href="#__codelineno-35-4"></a><span class="cp">?&gt;</span>
+</code></pre></div>
+<p>Jalankan skrip php di atas, dan apa hasilnya? 🤔</p>
+<details class="success">
+<summary>Benar</summary>
+<p>Muncul pesan <strong>Error...</strong> karena file yang dipanggil menggunakan <code>require</code> tidak ada, yaitu <code>fungsi.php</code>.</p>
+</details>
+<div class="admonition abstract">
+<p class="admonition-title">Catatan Tambahan</p>
+<ul>
+<li>Function <code>require</code> dan <code>include</code> akan selalu mengambil file yang kita inginkan.</li>
+<li>Jika kita beberapa kali menggunakan <code>require</code> dan <code>include</code> file yang sama, maka file tersebut akan berkali-kali pula kita ambil.</li>
+<li>Hal ini akan menjadi masalah jika misal dalam file yang kita ambil terdapat definisi function , sehingga jika diambil berkali-kali akan menyebabkan error redeclare function.</li>
+<li>Untungnya di PHP terdapat function <code>require_once</code> dan <code>include_once</code>, function ini bisa mendeteksi jika kita sebelumnya pernah mengambil file yang sama, maka tidak akan diambil lagi</li>
+</ul>
+</div>
 
 
 
