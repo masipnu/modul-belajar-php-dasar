@@ -978,7 +978,7 @@ Walaupun, saya tidak memasukan argumen <code>$nama</code>, kode tetap akan dijal
 <a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="cp">?&gt;</span>
 </code></pre></div>
 <p><strong>Contoh-2</strong></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="cp">&lt;?php</span>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="cp">&lt;?php</span>
 <a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="k">function</span> <span class="nf">nama_panggilan</span><span class="p">(</span><span class="nv">$nama</span><span class="p">){</span>
 <a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>    <span class="k">return</span> <span class="nb">substr</span><span class="p">(</span><span class="nv">$nama</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">5</span><span class="p">);</span>
 <a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="p">}</span>
@@ -987,6 +987,7 @@ Walaupun, saya tidak memasukan argumen <code>$nama</code>, kode tetap akan dijal
 <a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="k">echo</span> <span class="nb">ucfirst</span><span class="p">(</span><span class="nv">$namanya</span><span class="p">);</span>
 <a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="cp">?&gt;</span>
 </code></pre></div>
+S</p>
 <div class="admonition info">
 <p class="admonition-title">Keterangan</p>
 <ul>
@@ -995,10 +996,255 @@ Walaupun, saya tidak memasukan argumen <code>$nama</code>, kode tetap akan dijal
 </ul>
 </div>
 <h2 id="variasi-function-yang-lain">Variasi Function yang lain</h2>
+<ul>
+<li>Selain function standar di atas, sebenarnya di PHP kita bisa membuat function dengan penulisan yang sedikit berbeda, lebih rumit, atau bahkan lebih simpel dari format dasarnya.</li>
+<li>Hal ini tentunya disesuaikan dengan kebutuhan program atau aplikasi yang akan kita buat.</li>
+</ul>
 <h3 id="anonymous-function">Anonymous Function</h3>
+<ul>
+<li>Anonymous function adalah function tanpa nama, di PHP disebut juga dengan <strong>Closure</strong>.</li>
+<li>Anonymous function biasanya digunakan sebagai argument atau sebagai value di variable.</li>
+<li>Anonymous function membuat kita bisa mengirim function sebagai argument di function lainnya.</li>
+</ul>
+<p><strong>Contoh-1</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="c1">// Anonymous Function</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="nv">$halo</span> <span class="o">=</span> <span class="k">function</span><span class="p">(</span><span class="nx">string</span> <span class="nv">$nama</span><span class="p">){</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>    <span class="k">echo</span> <span class="s2">&quot;Halo </span><span class="si">$nama</span><span class="s2">&quot;</span><span class="o">.</span><span class="nx">PHP_EOL</span><span class="p">;</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="p">};</span>
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="nv">$halo</span><span class="p">(</span><span class="s2">&quot;Eko&quot;</span><span class="p">);</span>
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="nv">$halo</span><span class="p">(</span><span class="s2">&quot;Joko&quot;</span><span class="p">);</span>
+<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="cp">?&gt;</span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Catatan</p>
+<ul>
+<li>Perhatikan, bahwasanya saat membuat function, kita tidak membuat nama function-nya, namun langsung membuat bagian parameternya.</li>
+<li>Function tersebut langsung dimasukkan ke dalam variable <code>$halo</code>.</li>
+<li>Cara pemanggilan function tinggal menyebut nama variable yang berisi function tersebut, dalam hal ini adalah <code>$halo</code>.</li>
+</ul>
+</div>
+<p><strong>Contoh-2</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="c1">// Anonymous Functtion 2</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="k">function</span> <span class="nf">siyu</span><span class="p">(</span><span class="nx">string</span> <span class="nv">$nama</span><span class="p">,</span> <span class="nv">$format</span><span class="p">){</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>    <span class="nv">$namaAkhir</span> <span class="o">=</span> <span class="nv">$format</span><span class="p">(</span><span class="nv">$nama</span><span class="p">);</span>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>    <span class="k">echo</span> <span class="s2">&quot;See you </span><span class="si">$namaAkhir</span><span class="s2">&quot;</span><span class="o">.</span><span class="nx">PHP_EOL</span><span class="p">;</span>
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="p">}</span>
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>
+<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="c1">// Memanggil function</span>
+<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a><span class="nx">siyu</span><span class="p">(</span><span class="s2">&quot;Dita Leni Ravia&quot;</span><span class="p">,</span> <span class="k">function</span><span class="p">(</span><span class="nx">string</span> <span class="nv">$n</span><span class="p">){</span>
+<a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a>    <span class="k">return</span> <span class="nb">strtoupper</span><span class="p">(</span><span class="nv">$n</span><span class="p">);</span>
+<a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a><span class="p">})</span>
+<a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a><span class="cp">?&gt;</span>
+</code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Peringatan</p>
+<ul>
+<li>Mungkin, function tersebut terlihat membingungkan untuk difahami, namun cobalah untuk membaca dan memahami maksud dari tiap baris kodenya.</li>
+<li><code>strtoupper()</code> adalah function bawaan PHP untuk membuat teks menjadi huruf kapital.</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Catatan</p>
+<ul>
+<li>Secara default, anonymous function tidak bisa mengakses variabel yang terdapat diluar function.</li>
+<li>Jika kita ingin menggunakan variable yang terdapat diluar anonymous function, kita perlu secara explicit menyebutkannya menggunakan kata kunci use lalu diikuti variable-variable yang ingin kita gunakan.</li>
+</ul>
+</div>
+<p><strong>Sekarang coba ini..!</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="nv">$namaDepan</span> <span class="o">=</span> <span class="s2">&quot;Anggun&quot;</span><span class="p">;</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="nv">$namaBelakang</span> <span class="o">=</span> <span class="s2">&quot;Khowatim&quot;</span><span class="p">;</span>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="nv">$hai</span> <span class="o">=</span> <span class="k">function</span><span class="p">(){</span>
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>    <span class="k">echo</span> <span class="s2">&quot;Hai </span><span class="si">$namaDepan</span><span class="s2"> </span><span class="si">$namaBelakang</span><span class="s2">&quot;</span><span class="o">.</span><span class="nx">PHP_EOL</span><span class="p">;</span>
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="p">};</span>
+<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>
+<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a><span class="nv">$hai</span><span class="p">();</span>
+<a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a><span class="cp">?&gt;</span>
+</code></pre></div>
+<p><strong>Kalau begini..?</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="c1">// Akses variable di luar closure</span>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="nv">$namaDepan</span> <span class="o">=</span> <span class="s2">&quot;Aulia&quot;</span><span class="p">;</span>
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="nv">$namaBelakang</span> <span class="o">=</span> <span class="s2">&quot;Fatmawati&quot;</span><span class="p">;</span>
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="nv">$hai</span> <span class="o">=</span> <span class="k">function</span><span class="p">()</span> <span class="k">use</span><span class="p">(</span><span class="nv">$namaDepan</span><span class="p">,</span><span class="nv">$namaBelakang</span><span class="p">){</span>
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>    <span class="k">echo</span> <span class="s2">&quot;Hai </span><span class="si">$namaDepan</span><span class="s2"> </span><span class="si">$namaBelakang</span><span class="s2">&quot;</span><span class="o">.</span><span class="nx">PHP_EOL</span><span class="p">;</span>
+<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="p">};</span>
+<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a>
+<a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a><span class="nv">$hai</span><span class="p">();</span>
+<a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a><span class="cp">?&gt;</span>
+</code></pre></div>
+<p><strong>Yeay.. Berhasil 😁</strong></p>
 <h3 id="arrow-function">Arrow Function</h3>
+<p>Satu lagi kita bahas tentang variasi function di dalam PHP, walaupun sebenarnya masih banyak variasi function yang lain 😅.</p>
+<ul>
+<li>Arrow function diperkenalkan di PHP 7.4 sebagai alternative anonymous function yang lebih sederhana pembuatannya.</li>
+<li>Secara garis besar, sebenarnya arrow function dan anonymous function adalah dua hal yang sama.</li>
+<li>Hal yang membedakan di arrow function adalah, secara otomatis variable diluar closure bisa digunakan, tidak seperti di anonymous function yang harus disebutkan secara manual menggunakan kata kunci use.</li>
+<li>Pembuatan arrow function tidak menggunakan kata kunci function, melainkan fn.</li>
+<li>Arrow function di khususnya untuk pembuatan function yang sederhana</li>
+</ul>
+<p><strong>Contoh-1</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="c1">// Arrow Function</span>
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="nv">$a</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="nv">$b</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>
+<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="nv">$kali</span> <span class="o">=</span> <span class="nx">fn</span><span class="p">()</span><span class="o">=&gt;</span><span class="nv">$a</span><span class="o">*</span><span class="nv">$b</span><span class="p">;</span>
+<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>
+<a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a><span class="k">echo</span> <span class="nv">$kali</span><span class="p">();</span>
+<a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a><span class="cp">?&gt;</span>
+</code></pre></div>
+<p><strong>Contoh-2</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="c1">// Arrow Function-2</span>
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="nv">$n1</span><span class="o">=</span><span class="s2">&quot;Faruq&quot;</span><span class="p">;</span>
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="nv">$n2</span><span class="o">=</span><span class="s2">&quot;Arzaky&quot;</span><span class="p">;</span>
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>
+<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="nv">$goodbye</span> <span class="o">=</span> <span class="nx">fn</span><span class="p">()</span><span class="o">=&gt;</span><span class="s2">&quot;Goodbye </span><span class="si">$n1</span><span class="s2"> </span><span class="si">$n2</span><span class="s2">&quot;</span><span class="o">.</span><span class="nx">PHP_EOL</span><span class="p">;</span>
+<a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a>
+<a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a><span class="k">echo</span> <span class="nv">$goodbye</span><span class="p">();</span>
+<a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a><span class="cp">?&gt;</span>
+</code></pre></div>
+<div class="admonition abstract">
+<p class="admonition-title">Penutup</p>
+<ul>
+<li>Terlihat jelas bahwa pembuatan function dengan arrow function sangat sederhana, namun kita tidak bisa membuat function ini untuk setiap program yang kita buat, semua tergantung kebutuhan sistemnya.</li>
+<li>Kita cukupkan pembahasan tentang function kali ini, jika anda masih tertarik ingin tahu lebih tentang function, silahkan coba cari sendiri materinya dengan keyword <strong>Callback Function</strong> dan <strong>Recrusive Function</strong>. 😊</li>
+</ul>
+</div>
 <h2 id="function-untuk-operasi-string">Function untuk Operasi String</h2>
 <p>Untuk memanipulasi string, PHP sudah menyediakan function bawaan yang bisa langsung kita gunakan. Di antaranya sebagai berikut.</p>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Keterangan</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>addslashes(string)</code></td>
+<td>Memberikan tanda <code>\</code> pada karakter khusus seperti petik ganda <code>"</code>, petik tunggal <code>'</code> dan sebagainya.</td>
+</tr>
+<tr>
+<td><code>chr(ascii)</code></td>
+<td>Menghasilkan karakter dari sebuah kode ASCII</td>
+</tr>
+<tr>
+<td><code>explode(pemisah, string, batas)</code></td>
+<td>Mengkonversi string menjadi array. <strong>Fungsi ini sering dipakai</strong></td>
+</tr>
+<tr>
+<td><code>htmlentities(string, flags, character_set, double_encode)</code></td>
+<td>Mengkonversi karakter ke kode HTML</td>
+</tr>
+<tr>
+<td><code>htmlspecialchars(string,flags,character_set,double_encode)</code></td>
+<td>Mengkonversi karakter tertentu ke kode HTML</td>
+</tr>
+<tr>
+<td><code>implode(pemisah, array)</code></td>
+<td>Menghasilkan string dari suatu array. Kebalikan dari <code>implode()</code>, ini juga <strong>sering dipakai</strong>.</td>
+</tr>
+<tr>
+<td><code>join(pemisah, array)</code></td>
+<td>Menghasilkan string dari suatu array. Alias dari <code>implode()</code>.</td>
+</tr>
+<tr>
+<td><code>lcfirst(string)</code></td>
+<td><em>Lowercase First</em>, mengkonversi string pertama menjadi huruf kecil.</td>
+</tr>
+<tr>
+<td><code>ltrim(string, charlist)</code></td>
+<td>Menghilangkan spasi atau karakter tertentu di sebelah kiri string.</td>
+</tr>
+<tr>
+<td><code>md5(string, raw)</code></td>
+<td>Enkripsi dengan MD5 dari sebuah string. RAW menentukan format output binary atau heksadesimal, diisi <code>true</code> atau <code>false</code>.</td>
+</tr>
+<tr>
+<td><code>nl2br(string,xhtml)</code></td>
+<td>Menyisipkan tag <code>&lt;br&gt;</code> pada setiap ganti baris dari sebuah string. XHTML diisi <code>true</code> atau <code>false</code>.</td>
+</tr>
+<tr>
+<td><code>number_format(number, desimal, pemisah desimal, pemisah ribuan)</code></td>
+<td>Memformat angka menjadi ribuan.</td>
+</tr>
+<tr>
+<td><code>printf(format, arg1, arg2, arg3, ...)</code></td>
+<td>Menghasilkan string dengan format tertentu.</td>
+</tr>
+<tr>
+<td><code>rtrim(string, charlist)</code></td>
+<td>Menghilangkan spasi atau karakter tertentu pada sebelah kanan string.</td>
+</tr>
+<tr>
+<td><code>str_ireplace(dicari, pengganti, string, jumlah)</code></td>
+<td>Mengganti beberapa karakter pada sebuah string tanpa membedakan besar kecilnya huruf.</td>
+</tr>
+<tr>
+<td><code>str_replace(dicari, pengganti, string, jumlah)</code></td>
+<td>Mengganti beberapa karakter pada sebuah string dengan membedakan besar kecilnya huruf.</td>
+</tr>
+<tr>
+<td><code>str_shuffle(string)</code></td>
+<td>Mengacak karakter pada sebuah string.</td>
+</tr>
+<tr>
+<td><code>str_word_count(string, return, char)</code></td>
+<td>Menghasilkan jumlah karakter dari sebuah string</td>
+</tr>
+<tr>
+<td><code>stripslashes(string)</code></td>
+<td>Mengembalikan perintah <code>addslashesh()</code></td>
+</tr>
+<tr>
+<td><code>strlen(string)</code></td>
+<td>Menghasilkan panjang sebuah string.</td>
+</tr>
+<tr>
+<td><code>strpos(string, dicari, mulai)</code></td>
+<td>Menghasilkan posisi pertama dari sebuah string pada suatu string. Versi <em>case-insensitice</em> menggunakan <code>strripos()</code>.</td>
+</tr>
+<tr>
+<td><code>strrpos(string, dicari, mulai)</code></td>
+<td>Menghasilkan posisi terakhir sebuah string pada suatu string. Versi <em>case-insensitive</em> menggunakan <code>strripos()</code>.</td>
+</tr>
+<tr>
+<td><code>strtolower(string)</code></td>
+<td>Mengkonversi string ke huruf kecil semua.</td>
+</tr>
+<tr>
+<td><code>strtoupper(string)</code></td>
+<td>Mengkonversi string ke huruf besar semua.</td>
+</tr>
+<tr>
+<td><code>substr(string, mulai, panjang)</code></td>
+<td>Menghasilkan bagian dari sebuah string.</td>
+</tr>
+<tr>
+<td><code>trinm(string, charlist)</code></td>
+<td>Menghilangkan spasi atau karakter lain di awal maupun akhir string.</td>
+</tr>
+<tr>
+<td><code>ucfirst(string)</code></td>
+<td>Mengubah hurug pertama string menjadi huruf kapital.</td>
+</tr>
+<tr>
+<td><code>ucwords(string)</code></td>
+<td>Mengubah huruf pertama setiap kata dari sebuah string menjadi huruf kapital.</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition abstract">
+<p class="admonition-title">Referensi</p>
+<p>Jika kamu tertarik mempeljari string function yang lain, bisa kunjungi <a href="https://www.php.net/manual/en/ref.strings.php"><strong>🌏 link berikut</strong></a>.</p>
+</div>
 <h2 id="function-untuk-operasi-tanggal">Function untuk Operasi Tanggal</h2>
 <p>PHP juga menyediakan functio bawaan untuk memproses data tanggal, sebagaimana berikut.</p>
 <h3 id="function-date">Function <code>date()</code></h3>
