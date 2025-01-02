@@ -1241,6 +1241,23 @@ S</p>
 </tr>
 </tbody>
 </table>
+<p>Untuk lebih memahami penggunaan dari fungsi-fungsi di atas, mari kita coba beberapa.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="nv">$teks</span> <span class="o">=</span> <span class="s2">&quot;Saya senang belajar PHP&quot;</span><span class="p">;</span>
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="k">echo</span> <span class="s2">&quot;Teks asli &#39;</span><span class="si">$teks</span><span class="s2">&#39;&quot;</span><span class="o">.</span><span class="nx">PHP_EOL</span><span class="p">;</span>
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>
+<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="k">echo</span> <span class="s2">&quot;substr() : &quot;</span> <span class="o">.</span> <span class="nb">substr</span><span class="p">(</span><span class="nv">$teks</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">11</span><span class="p">)</span> <span class="o">.</span> <span class="nx">PHP_EOL</span><span class="p">;</span>
+<a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a><span class="k">echo</span> <span class="s2">&quot;susbtr() : &quot;</span> <span class="o">.</span> <span class="nb">substr</span><span class="p">(</span><span class="nv">$teks</span><span class="p">,</span><span class="mi">12</span><span class="p">)</span> <span class="o">.</span> <span class="nx">PHP_EOL</span><span class="p">;</span>
+<a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a><span class="k">echo</span> <span class="s2">&quot;strtoupper() : &quot;</span> <span class="o">.</span> <span class="nb">strtoupper</span><span class="p">(</span><span class="nv">$teks</span><span class="p">)</span> <span class="o">.</span> <span class="nx">PHP_EOL</span><span class="p">;</span>
+<a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a><span class="k">echo</span> <span class="s2">&quot;ucwords() : &quot;</span> <span class="o">.</span> <span class="nb">ucwords</span><span class="p">(</span><span class="nv">$teks</span><span class="p">)</span> <span class="o">.</span> <span class="nx">PHP_EOL</span><span class="p">;</span>
+<a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a><span class="k">echo</span> <span class="s2">&quot;str_replace() : &quot;</span> <span class="o">.</span> <span class="nb">str_replace</span><span class="p">(</span><span class="s2">&quot;senang&quot;</span><span class="p">,</span><span class="s2">&quot;suka&quot;</span><span class="p">,</span><span class="nv">$teks</span><span class="p">)</span> <span class="o">.</span> <span class="nx">PHP_EOL</span><span class="p">;</span>
+<a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a><span class="k">echo</span> <span class="s2">&quot;strops() : &quot;</span> <span class="o">.</span> <span class="nb">strpos</span><span class="p">(</span><span class="nv">$teks</span><span class="p">,</span><span class="s2">&quot;P&quot;</span><span class="p">)</span> <span class="o">.</span> <span class="nx">PHP_EOL</span><span class="p">;</span>
+<a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a>
+<a id="__codelineno-16-12" name="__codelineno-16-12" href="#__codelineno-16-12"></a><span class="nv">$kata</span> <span class="o">=</span> <span class="nb">explode</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">,</span><span class="nv">$teks</span><span class="p">);</span>
+<a id="__codelineno-16-13" name="__codelineno-16-13" href="#__codelineno-16-13"></a><span class="k">echo</span> <span class="s2">&quot;explode() : &quot;</span> <span class="o">.</span> <span class="nv">$kata</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+<a id="__codelineno-16-14" name="__codelineno-16-14" href="#__codelineno-16-14"></a>
+<a id="__codelineno-16-15" name="__codelineno-16-15" href="#__codelineno-16-15"></a><span class="cp">?&gt;</span>
+</code></pre></div>
 <div class="admonition abstract">
 <p class="admonition-title">Referensi</p>
 <p>Jika kamu tertarik mempeljari string function yang lain, bisa kunjungi <a href="https://www.php.net/manual/en/ref.strings.php"><strong>🌏 link berikut</strong></a>.</p>
@@ -1248,7 +1265,178 @@ S</p>
 <h2 id="function-untuk-operasi-tanggal">Function untuk Operasi Tanggal</h2>
 <p>PHP juga menyediakan functio bawaan untuk memproses data tanggal, sebagaimana berikut.</p>
 <h3 id="function-date">Function <code>date()</code></h3>
+<ul>
+<li>Function ini digunakan untuk mencetak tanggal dengan format tertentu.</li>
+<li>Format tanggal ditulis di dalam kurung.</li>
+<li>Beberapa huruf yang dapat digunakan untuk menulis format tanggal sebagai berikut.</li>
+</ul>
+<p><strong>Time</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Huruf</th>
+<th>Keterangan</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><strong>a</strong></td>
+<td>am atau pm</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>A</strong></td>
+<td>AM atau PM</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>g</strong></td>
+<td>Jam tanpa 0 di depan, bernilai antara 1-12</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>G</strong></td>
+<td>Jam tanpa 0 di depan, bernilai antara 0-23</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>h</strong></td>
+<td>Jam dengan 0 di depan, bernilai antara 1-12</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>H</strong></td>
+<td>Jam dengan 0 di depan, bernilai antara 00-23</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>i</strong></td>
+<td>Menit dengan 0 di depan, bernilai antara 00-59</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>s</strong></td>
+<td>detik dengan 0 di depan, bernilai antara 00-59</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Day</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Huruf</th>
+<th>Keterangan</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><strong>d</strong></td>
+<td>Tanggal dengan 0 di depan, bernilai antara 01-31</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>j</strong></td>
+<td>Tanggal tanpa 0 di depan, bernilai antara 1-31</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>D</strong></td>
+<td>Hari dalam mingguan(singkatan), bernilai antara Sun - Sat</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>I</strong></td>
+<td>Hari dalam mingguan, bernilai antara Sunday - Saturday</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>w</strong></td>
+<td>Hari dalam mingguan tanpa 0 di depan, bernilai antara 0 - 6</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>w</strong></td>
+<td>Hari dalam tahunan tanpa 0 di depan, bernilai antara 0 - 365</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Month</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Huruf</th>
+<th>Keterangan</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><strong>m</strong></td>
+<td>Bulan dengan 0 di depan, bernilai antara 01 - 12</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>n</strong></td>
+<td>Bulan tanpa 0 di depan, bernilai antara 1 - 12</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>M</strong></td>
+<td>Singkatan dari bulan, bernilai antara Jan - Dec</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>F</strong></td>
+<td>Nama bulan lengkap, bernilai antara January - December</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>t</strong></td>
+<td>Jumlah hari dalam sebulan, bernilai antara 28 -  31</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Year</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Huruf</th>
+<th>Keterangan</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><strong>L</strong></td>
+<td>1 jika melompati tahun, dan 0 jika tidak</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>Y</strong></td>
+<td>Tahun dengan 4 digit</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>y</strong></td>
+<td>Tahun dengan 2 digit</td>
+</tr>
+</tbody>
+</table>
+<p>Agar lebih memahami penggunaan fungsi-fungsi di atas, mari kita coba beberapa, yang sering digunakan.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="c1">// Function date</span>
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="k">echo</span> <span class="nb">date</span><span class="p">(</span><span class="s1">&#39;Y/m/d&#39;</span><span class="p">)</span> <span class="o">.</span> <span class="nx">PHP_EOL</span><span class="p">;</span>
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="k">echo</span> <span class="nb">date</span><span class="p">(</span><span class="s1">&#39;d-m-Y H:i:s a&#39;</span><span class="p">)</span> <span class="o">.</span> <span class="nx">PHP_EOL</span><span class="p">;</span>
+<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="k">echo</span> <span class="nb">date</span><span class="p">(</span><span class="s1">&#39;d F Y&#39;</span><span class="p">);</span>
+<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="cp">?&gt;</span>
+</code></pre></div>
 <h3 id="function-mktime">Function <code>mktime()</code></h3>
+<p>Function ini digunakan untuk membuat <em>timestamp</em> dengan format sintaks sebagai berikut.
+    <code>mktime(hour, minute, second, month, day, year);</code></p>
+<p><strong>Contoh</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="c1">// Function mktime()</span>
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="nv">$sekarang</span> <span class="o">=</span> <span class="nb">mktime</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="nb">date</span><span class="p">(</span><span class="s1">&#39;m&#39;</span><span class="p">),</span> <span class="nb">date</span><span class="p">(</span><span class="s1">&#39;d&#39;</span><span class="p">),</span> <span class="nb">date</span><span class="p">(</span><span class="s1">&#39;Y&#39;</span><span class="p">));</span>
+<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="k">echo</span> <span class="s2">&quot;Sekarang tanggal &quot;</span> <span class="o">.</span> <span class="nb">date</span><span class="p">(</span><span class="s1">&#39;d F Y&#39;</span><span class="p">,</span> <span class="nv">$sekarang</span><span class="p">);</span>
+<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="k">echo</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+<a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a>
+<a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a><span class="nv">$bulanlalu</span> <span class="o">=</span> <span class="nb">mktime</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">date</span><span class="p">(</span><span class="s1">&#39;m&#39;</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="nb">date</span><span class="p">(</span><span class="s1">&#39;d&#39;</span><span class="p">),</span> <span class="nb">date</span><span class="p">(</span><span class="s1">&#39;Y&#39;</span><span class="p">));</span>
+<a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a><span class="k">echo</span> <span class="s2">&quot;Satu bulan yang lalu adalah tanggal &quot;</span> <span class="o">.</span> <span class="nb">date</span><span class="p">(</span><span class="s1">&#39;d F Y&#39;</span><span class="p">,</span> <span class="nv">$bulanlalu</span><span class="p">);</span>
+<a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a><span class="k">echo</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+<a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a>
+<a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a><span class="nv">$lusa</span> <span class="o">=</span> <span class="nb">mktime</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">date</span><span class="p">(</span><span class="s1">&#39;m&#39;</span><span class="p">),</span> <span class="nb">date</span><span class="p">(</span><span class="s1">&#39;d&#39;</span><span class="p">)</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span> <span class="nb">date</span><span class="p">(</span><span class="s1">&#39;Y&#39;</span><span class="p">));</span>
+<a id="__codelineno-18-12" name="__codelineno-18-12" href="#__codelineno-18-12"></a><span class="k">echo</span> <span class="s2">&quot;Lusa adalah tanggal &quot;</span> <span class="o">.</span> <span class="nb">date</span><span class="p">(</span><span class="s1">&#39;d F Y&#39;</span><span class="p">,</span> <span class="nv">$lusa</span><span class="p">);</span>
+<a id="__codelineno-18-13" name="__codelineno-18-13" href="#__codelineno-18-13"></a><span class="k">echo</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+<a id="__codelineno-18-14" name="__codelineno-18-14" href="#__codelineno-18-14"></a>
+<a id="__codelineno-18-15" name="__codelineno-18-15" href="#__codelineno-18-15"></a><span class="nv">$tahun</span> <span class="o">=</span> <span class="nb">mktime</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">date</span><span class="p">(</span><span class="s1">&#39;m&#39;</span><span class="p">),</span> <span class="nb">date</span><span class="p">(</span><span class="s1">&#39;d&#39;</span><span class="p">),</span> <span class="nb">date</span><span class="p">(</span><span class="s1">&#39;Y&#39;</span><span class="p">)</span><span class="o">-</span><span class="mi">2</span><span class="p">);</span>
+<a id="__codelineno-18-16" name="__codelineno-18-16" href="#__codelineno-18-16"></a><span class="k">echo</span> <span class="s2">&quot;Dua tahun yang lalu adalah tanggal &quot;</span> <span class="o">.</span> <span class="nb">date</span><span class="p">(</span><span class="s1">&#39;d F Y&#39;</span><span class="p">,</span> <span class="nv">$tahun</span><span class="p">);</span>
+<a id="__codelineno-18-17" name="__codelineno-18-17" href="#__codelineno-18-17"></a>
+<a id="__codelineno-18-18" name="__codelineno-18-18" href="#__codelineno-18-18"></a><span class="cp">?&gt;</span>
+</code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">Informasi</p>
+<p>Selain 2 function yang paling sering digunakan di atas, beberapa function yang berkenaan dengan penggunaan tanggal yaitu <strong><code>date_default_timezone_set()</code></strong> untuk menentukan timezone dan <strong><code>strtotime()</code></strong> untuk mengubah string menjadi format tanggal atau waktu. 😊</p>
+</div>
 <h2 id="function-untuk-operasi-matematika">Function untuk Operasi Matematika</h2>
 <p>Untuk operasi matematika, banyak sekali function bawaan PHP yang bisa langsung kita gunakan, sebagai berikut.</p>
 <h2 id="function-untuk-penanganan-file">Function untuk Penanganan File</h2>
