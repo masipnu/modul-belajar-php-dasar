@@ -1439,8 +1439,382 @@ S</p>
 </div>
 <h2 id="function-untuk-operasi-matematika">Function untuk Operasi Matematika</h2>
 <p>Untuk operasi matematika, banyak sekali function bawaan PHP yang bisa langsung kita gunakan, sebagai berikut.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Function</strong></th>
+<th><strong>Keterangan</strong></th>
+<th><strong>Contoh</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>abs($number)</code></td>
+<td>Mengembalikan nilai absolut dari sebuah bilangan.</td>
+<td><code>echo abs(-5); // 5</code></td>
+</tr>
+<tr>
+<td><code>round($number, $precision = 0, $mode = PHP_ROUND_HALF_UP)</code></td>
+<td>Membulatkan bilangan ke nilai terdekat dengan presisi opsional.</td>
+<td><code>echo round(4.5); // 5</code></td>
+</tr>
+<tr>
+<td><code>ceil($number)</code></td>
+<td>Membulatkan sebuah bilangan ke atas (ke nilai integer terdekat).</td>
+<td><code>echo ceil(4.3); // 5</code></td>
+</tr>
+<tr>
+<td><code>floor($number)</code></td>
+<td>Membulatkan sebuah bilangan ke bawah (ke nilai integer terdekat).</td>
+<td><code>echo floor(4.7); // 4</code></td>
+</tr>
+<tr>
+<td><code>max(...$values)</code></td>
+<td>Mengembalikan nilai maksimum dari serangkaian bilangan.</td>
+<td><code>echo max(1, 3, 5); // 5</code></td>
+</tr>
+<tr>
+<td><code>min(...$values)</code></td>
+<td>Mengembalikan nilai minimum dari serangkaian bilangan.</td>
+<td><code>echo min(1, 3, 5); // 1</code></td>
+</tr>
+<tr>
+<td><code>rand($min, $max)</code></td>
+<td>Mengembalikan bilangan acak dalam rentang tertentu.</td>
+<td><code>echo rand(1, 10); // Contoh: 7</code></td>
+</tr>
+<tr>
+<td><code>sqrt($number)</code></td>
+<td>Mengembalikan akar kuadrat dari sebuah bilangan.</td>
+<td><code>echo sqrt(16); // 4</code></td>
+</tr>
+<tr>
+<td><code>pow($base, $exp)</code></td>
+<td>Mengembalikan hasil dari bilangan berpangkat (eksponen).</td>
+<td><code>echo pow(2, 3); // 8</code></td>
+</tr>
+<tr>
+<td><code>pi()</code></td>
+<td>Mengembalikan nilai π (pi) sebagai bilangan floating-point.</td>
+<td><code>echo pi(); // 3.14159</code></td>
+</tr>
+<tr>
+<td><code>log($number, $base = M_E)</code></td>
+<td>Mengembalikan logaritma dari sebuah bilangan, dengan basis opsional.</td>
+<td><code>echo log(8, 2); // 3</code></td>
+</tr>
+<tr>
+<td><code>deg2rad($degrees)</code></td>
+<td>Mengonversi sudut dari derajat ke radian.</td>
+<td><code>echo deg2rad(180); // 3.14159</code></td>
+</tr>
+<tr>
+<td><code>rad2deg($radians)</code></td>
+<td>Mengonversi sudut dari radian ke derajat.</td>
+<td><code>echo rad2deg(3.14159); // 180</code></td>
+</tr>
+<tr>
+<td><code>cos($number)</code></td>
+<td>Mengembalikan kosinus dari sebuah bilangan (dalam radian).</td>
+<td><code>echo cos(0); // 1</code></td>
+</tr>
+<tr>
+<td><code>sin($number)</code></td>
+<td>Mengembalikan sinus dari sebuah bilangan (dalam radian).</td>
+<td><code>echo sin(pi() / 2); // 1</code></td>
+</tr>
+<tr>
+<td><code>tan($number)</code></td>
+<td>Mengembalikan tangen dari sebuah bilangan (dalam radian).</td>
+<td><code>echo tan(pi() / 4); // 1</code></td>
+</tr>
+<tr>
+<td><code>acos($number)</code></td>
+<td>Mengembalikan arccosinus (nilai invers kosinus) dari sebuah bilangan.</td>
+<td><code>echo acos(0.5); // 1.0472</code></td>
+</tr>
+<tr>
+<td><code>asin($number)</code></td>
+<td>Mengembalikan arcsinus (nilai invers sinus) dari sebuah bilangan.</td>
+<td><code>echo asin(0.5); // 0.5236</code></td>
+</tr>
+<tr>
+<td><code>atan($number)</code></td>
+<td>Mengembalikan arctangen (nilai invers tangen) dari sebuah bilangan.</td>
+<td><code>echo atan(1); // 0.7854</code></td>
+</tr>
+<tr>
+<td><code>bindec($binary_string)</code></td>
+<td>Mengubah bilangan biner menjadi bilangan desimal.</td>
+<td><code>echo bindec('101'); // 5</code></td>
+</tr>
+<tr>
+<td><code>decbin($number)</code></td>
+<td>Mengubah bilangan desimal menjadi bilangan biner.</td>
+<td><code>echo decbin(5); // 101</code></td>
+</tr>
+<tr>
+<td><code>dechex($number)</code></td>
+<td>Mengubah bilangan desimal menjadi bilangan heksadesimal.</td>
+<td><code>echo dechex(255); // ff</code></td>
+</tr>
+<tr>
+<td><code>decoct($number)</code></td>
+<td>Mengubah bilangan desimal menjadi bilangan oktal.</td>
+<td><code>echo decoct(8); // 10</code></td>
+</tr>
+<tr>
+<td><code>hexdec($hex_string)</code></td>
+<td>Mengubah bilangan heksadesimal menjadi bilangan desimal.</td>
+<td><code>echo hexdec('ff'); // 255</code></td>
+</tr>
+<tr>
+<td><code>octdec($octal_string)</code></td>
+<td>Mengubah bilangan oktal menjadi bilangan desimal.</td>
+<td><code>echo octdec('10'); // 8</code></td>
+</tr>
+</tbody>
+</table>
+<p>Agar lebih memahami penggunaan function di atas, mari kita buat beberapa contoh.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="c1">// Fungsi Matematika</span>
+<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="k">echo</span> <span class="s2">&quot;abs(-100) : &quot;</span> <span class="o">.</span> <span class="nb">abs</span><span class="p">(</span><span class="o">-</span><span class="mi">100</span><span class="p">)</span> <span class="o">.</span> <span class="nx">PHP_EOL</span><span class="p">;</span>
+<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="k">echo</span> <span class="s2">&quot;cos(60) : &quot;</span> <span class="o">.</span> <span class="nb">cos</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span> <span class="o">.</span> <span class="nx">PHP_EOL</span><span class="p">;</span>
+<a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a><span class="k">echo</span> <span class="s2">&quot;bindec(10001111011) : &quot;</span> <span class="o">.</span> <span class="nb">bindec</span><span class="p">(</span><span class="mi">10001111011</span><span class="p">)</span> <span class="o">.</span> <span class="nx">PHP_EOL</span><span class="p">;</span>
+<a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a><span class="k">echo</span> <span class="s2">&quot;ceil(12.123) : &quot;</span> <span class="o">.</span> <span class="nb">ceil</span><span class="p">(</span><span class="mf">12.123</span><span class="p">)</span> <span class="o">.</span> <span class="nx">PHP_EOL</span><span class="p">;</span>
+<a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a><span class="k">echo</span> <span class="s2">&quot;floor(12.123) : &quot;</span> <span class="o">.</span> <span class="nb">floor</span><span class="p">(</span><span class="mf">12.123</span><span class="p">)</span> <span class="o">.</span> <span class="nx">PHP_EOL</span><span class="p">;</span>
+<a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a><span class="k">echo</span> <span class="s2">&quot;round(12.123) : &quot;</span> <span class="o">.</span> <span class="nb">round</span><span class="p">(</span><span class="mf">12.123</span><span class="p">)</span> <span class="o">.</span> <span class="nx">PHP_EOL</span><span class="p">;</span>
+<a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a><span class="k">echo</span> <span class="s2">&quot;deg2rad(90) : &quot;</span> <span class="o">.</span> <span class="nb">deg2rad</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span> <span class="o">.</span> <span class="nx">PHP_EOL</span><span class="p">;</span>
+<a id="__codelineno-19-10" name="__codelineno-19-10" href="#__codelineno-19-10"></a><span class="k">echo</span> <span class="s2">&quot;pow(4,2) : &quot;</span> <span class="o">.</span> <span class="nb">pow</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span> <span class="o">.</span> <span class="nx">PHP_EOL</span><span class="p">;</span>
+<a id="__codelineno-19-11" name="__codelineno-19-11" href="#__codelineno-19-11"></a><span class="k">echo</span> <span class="s2">&quot;sqrt(16) : &quot;</span> <span class="o">.</span> <span class="nb">sqrt</span><span class="p">(</span><span class="mi">16</span><span class="p">)</span> <span class="o">.</span> <span class="nx">PHP_EOL</span><span class="p">;</span>
+<a id="__codelineno-19-12" name="__codelineno-19-12" href="#__codelineno-19-12"></a><span class="k">echo</span> <span class="s2">&quot;rand(10,1000) : &quot;</span> <span class="o">.</span> <span class="nb">rand</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">1000</span><span class="p">)</span> <span class="o">.</span> <span class="nx">PHP_EOL</span><span class="p">;</span>
+<a id="__codelineno-19-13" name="__codelineno-19-13" href="#__codelineno-19-13"></a><span class="k">echo</span> <span class="s2">&quot;max(10,11,17,13) : &quot;</span> <span class="o">.</span> <span class="nb">max</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">17</span><span class="p">,</span><span class="mi">13</span><span class="p">)</span> <span class="o">.</span> <span class="nx">PHP_EOL</span><span class="p">;</span>
+<a id="__codelineno-19-14" name="__codelineno-19-14" href="#__codelineno-19-14"></a>
+<a id="__codelineno-19-15" name="__codelineno-19-15" href="#__codelineno-19-15"></a><span class="nv">$nilai</span> <span class="o">=</span> <span class="p">[</span><span class="mi">80</span><span class="p">,</span><span class="mi">90</span><span class="p">,</span><span class="mi">76</span><span class="p">,</span><span class="mi">88</span><span class="p">,</span><span class="mi">56</span><span class="p">];</span>
+<a id="__codelineno-19-16" name="__codelineno-19-16" href="#__codelineno-19-16"></a><span class="k">echo</span> <span class="s2">&quot;max(</span><span class="se">\$</span><span class="s2">nilai) : &quot;</span> <span class="o">.</span> <span class="nb">max</span><span class="p">(</span><span class="nv">$nilai</span><span class="p">)</span> <span class="o">.</span> <span class="nx">PHP_EOL</span><span class="p">;</span>
+<a id="__codelineno-19-17" name="__codelineno-19-17" href="#__codelineno-19-17"></a><span class="cp">?&gt;</span>
+</code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Perhatian</p>
+<p>Silahkan teliti dan amati skrip di atas, pahami maksud dan hasil dari setiap baris kodenya. <em>Good Luck </em>😊</p>
+</div>
 <h2 id="function-untuk-penanganan-file">Function untuk Penanganan File</h2>
 <p>PHP dapat digunakan untuk memanipulasi direktori maupun file. Di antara function-function nya adalahs sebagai berikut.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Function</th>
+<th>Keterangan</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><code>basename(path, suffix)</code></td>
+<td>Menghasilkan nama file dari sebuah path.</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Agar lebih memahami function di atas, mari kita buat contoh kodenya. Anda tidak perlu menulis baris komentar jika sudah paham maksudnya dan menginginkan kode yang lebih ringkas.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="c1">// Membuka/ membuat file</span>
+<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="nv">$file</span> <span class="o">=</span> <span class="nb">fopen</span><span class="p">(</span><span class="s2">&quot;halo.txt&quot;</span><span class="p">,</span><span class="s2">&quot;w&quot;</span><span class="p">);</span>
+<a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a>
+<a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a><span class="c1">// Menyiapkan teks</span>
+<a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a><span class="nv">$teks</span> <span class="o">=</span> <span class="s2">&quot;Halo, </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+<a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a>
+<a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a><span class="c1">// Mengisi file</span>
+<a id="__codelineno-20-9" name="__codelineno-20-9" href="#__codelineno-20-9"></a><span class="nb">fwrite</span><span class="p">(</span><span class="nv">$file</span><span class="p">,</span> <span class="nv">$teks</span><span class="p">);</span>
+<a id="__codelineno-20-10" name="__codelineno-20-10" href="#__codelineno-20-10"></a>
+<a id="__codelineno-20-11" name="__codelineno-20-11" href="#__codelineno-20-11"></a><span class="c1">// Menyiapkan teks</span>
+<a id="__codelineno-20-12" name="__codelineno-20-12" href="#__codelineno-20-12"></a><span class="nv">$teks</span> <span class="o">=</span> <span class="s2">&quot;Saya sedang belajar PHP</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+<a id="__codelineno-20-13" name="__codelineno-20-13" href="#__codelineno-20-13"></a>
+<a id="__codelineno-20-14" name="__codelineno-20-14" href="#__codelineno-20-14"></a><span class="c1">// Mengisi file</span>
+<a id="__codelineno-20-15" name="__codelineno-20-15" href="#__codelineno-20-15"></a><span class="nb">fwrite</span><span class="p">(</span><span class="nv">$file</span><span class="p">,</span> <span class="nv">$teks</span><span class="p">);</span>
+<a id="__codelineno-20-16" name="__codelineno-20-16" href="#__codelineno-20-16"></a>
+<a id="__codelineno-20-17" name="__codelineno-20-17" href="#__codelineno-20-17"></a><span class="c1">// Menutup file</span>
+<a id="__codelineno-20-18" name="__codelineno-20-18" href="#__codelineno-20-18"></a><span class="nb">fclose</span><span class="p">(</span><span class="nv">$file</span><span class="p">);</span>
+<a id="__codelineno-20-19" name="__codelineno-20-19" href="#__codelineno-20-19"></a>
+<a id="__codelineno-20-20" name="__codelineno-20-20" href="#__codelineno-20-20"></a><span class="cp">?&gt;</span>
+</code></pre></div>
+<div class="admonition success">
+<p class="admonition-title">Hasil</p>
+<p>Coba pahami skrip di atas, lalu jalankan, maka akan muncul file <code>halo.txt</code> yang berisi
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>Halo, 
+<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>Saya sedang belajar PHP
+</code></pre></div></p>
+</div>
 
 
 
