@@ -368,6 +368,8 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
@@ -396,6 +398,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -404,35 +408,20 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#variabel-superglobal" class="md-nav__link">
+  <a href="#variabel-globals" class="md-nav__link">
     <span class="md-ellipsis">
-      Variabel Superglobal
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Variabel Superglobal">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#variabel-global" class="md-nav__link">
-    <span class="md-ellipsis">
-      Variabel $GLOBAL
+      Variabel $GLOBALS
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#variabel-_server" class="md-nav__link">
     <span class="md-ellipsis">
       Variabel $_SERVER
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -581,6 +570,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -589,35 +580,20 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#variabel-superglobal" class="md-nav__link">
+  <a href="#variabel-globals" class="md-nav__link">
     <span class="md-ellipsis">
-      Variabel Superglobal
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Variabel Superglobal">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#variabel-global" class="md-nav__link">
-    <span class="md-ellipsis">
-      Variabel $GLOBAL
+      Variabel $GLOBALS
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#variabel-_server" class="md-nav__link">
     <span class="md-ellipsis">
       Variabel $_SERVER
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -636,11 +612,239 @@
                   
 
 
-  <h1>Variabel Superglobal</h1>
-
-<h2 id="variabel-superglobal">Variabel Superglobal</h2>
-<h3 id="variabel-global">Variabel $GLOBAL</h3>
-<h3 id="variabel-_server">Variabel $_SERVER</h3>
+<h1 id="variabel-superglobal">Variabel Superglobal</h1>
+<p>Variabel superglobal yaitu khusus bawaan PHP yagn dapat diakses dari mana saja, baik dari luar function maupun di dalam function.</p>
+<h2 id="variabel-globals">Variabel $GLOBALS</h2>
+<ul>
+<li>Secara default, ketika kita membuat sebuah variabel maka seberanya PHP akan menyimpannya di dalam memori komputer, tepatnya di variabel <code>$GLOBALS</code>.</li>
+<li>Varibal <code>$GLOBALS</code> adalah variabel array yang berisi variabel-variabel bawaan PHP dan variabel yang kita definisikan.</li>
+<li>Karena berupa array, maka kita bisa mengambil nilainya dengan skrip <code>$GLOBALS[nama_variabel]</code>.</li>
+</ul>
+<p>Sebagai percobaan awal mari kita bongkar isi dari variabel <code>$GLOBALS</code>.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nb">var_dump</span><span class="p">(</span><span class="nv">$GLOBALS</span><span class="p">);</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="cp">?&gt;</span>
+</code></pre></div>
+<p>Coba jalankan skrip di atas, maka akan ditampilkan array yang isinya banyak sekali, silahkan amati dan teliti maksudnya.</p>
+<p>Sekarang kita coba buat sebuah variabel, dan coba mengaksesnya dengan variabel <code>$GLOBALS</code>.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nv">$nama</span> <span class="o">=</span> <span class="s2">&quot;Kim Jong Unch&quot;</span><span class="p">;</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="nv">$umur</span> <span class="o">=</span> <span class="mi">56</span><span class="p">;</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="k">function</span> <span class="nf">tambah_umur</span><span class="p">(){</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>    <span class="nv">$GLOBALS</span><span class="p">[</span><span class="s1">&#39;umur&#39;</span><span class="p">]</span><span class="o">++</span><span class="p">;</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="p">}</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="k">echo</span> <span class="s2">&quot;Nama : &quot;</span> <span class="o">.</span> <span class="nv">$GLOBALS</span><span class="p">[</span><span class="s1">&#39;nama&#39;</span><span class="p">]</span><span class="o">.</span><span class="nx">PHP_EOL</span><span class="p">;</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="nx">tambah_umur</span><span class="p">();</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="k">echo</span> <span class="s2">&quot;Umur : &quot;</span> <span class="o">.</span> <span class="nv">$GLOBALS</span><span class="p">[</span><span class="s1">&#39;umur&#39;</span><span class="p">];</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="cp">?&gt;</span>
+</code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">Penjelasan</p>
+<ol>
+<li>Awalnya kita membuat variabel <code>$nama</code> dan <code>$umur</code></li>
+<li>Lalu kita membuat function <code>tambah_umur()</code> yang berfungsi mengambil variabal <code>$umur</code> yang diakses dengan variabel <code>$GLOBAL['umur']</code> dan menaikkan nilainya dengan operator <code>++</code>.</li>
+<li>Terakhir kita tampilkan hasilnya menggunakan <code>echo</code>.</li>
+</ol>
+</div>
+<h2 id="variabel-_server">Variabel $_SERVER</h2>
+<ul>
+<li>Variabel <code>$_SERVER</code> menyediakan informasi tentang header, path dan lokasi skrip.</li>
+<li>Variabel <code>$_SERVER</code> menyediakan banyak informasi tentang server, rinciannya sebagaimana pada tabel berikut.</li>
+<li>Namun, untuk membuktikannya, silahkan lakukan perintah <code>var_dump($_SERVER);</code></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Variabel Key</th>
+<th>Keterangan</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>``</td>
+<td></td>
+</tr>
+<tr>
+<td>``</td>
+<td></td>
+</tr>
+<tr>
+<td>``</td>
+<td></td>
+</tr>
+<tr>
+<td>``</td>
+<td></td>
+</tr>
+<tr>
+<td>``</td>
+<td></td>
+</tr>
+<tr>
+<td>``</td>
+<td></td>
+</tr>
+<tr>
+<td>``</td>
+<td></td>
+</tr>
+<tr>
+<td>``</td>
+<td></td>
+</tr>
+<tr>
+<td>``</td>
+<td></td>
+</tr>
+<tr>
+<td>``</td>
+<td></td>
+</tr>
+<tr>
+<td>``</td>
+<td></td>
+</tr>
+<tr>
+<td>``</td>
+<td></td>
+</tr>
+<tr>
+<td>``</td>
+<td></td>
+</tr>
+<tr>
+<td>``</td>
+<td></td>
+</tr>
+<tr>
+<td>``</td>
+<td></td>
+</tr>
+<tr>
+<td>``</td>
+<td></td>
+</tr>
+<tr>
+<td>``</td>
+<td></td>
+</tr>
+<tr>
+<td>``</td>
+<td></td>
+</tr>
+<tr>
+<td>``</td>
+<td></td>
+</tr>
+<tr>
+<td>``</td>
+<td></td>
+</tr>
+<tr>
+<td>``</td>
+<td></td>
+</tr>
+<tr>
+<td>``</td>
+<td></td>
+</tr>
+<tr>
+<td>``</td>
+<td></td>
+</tr>
+<tr>
+<td>``</td>
+<td></td>
+</tr>
+<tr>
+<td>``</td>
+<td></td>
+</tr>
+<tr>
+<td>``</td>
+<td></td>
+</tr>
+<tr>
+<td>``</td>
+<td></td>
+</tr>
+<tr>
+<td>``</td>
+<td></td>
+</tr>
+<tr>
+<td>``</td>
+<td></td>
+</tr>
+<tr>
+<td>``</td>
+<td></td>
+</tr>
+<tr>
+<td>``</td>
+<td></td>
+</tr>
+<tr>
+<td>``</td>
+<td></td>
+</tr>
+<tr>
+<td>``</td>
+<td></td>
+</tr>
+<tr>
+<td>``</td>
+<td></td>
+</tr>
+<tr>
+<td>``</td>
+<td></td>
+</tr>
+<tr>
+<td>``</td>
+<td></td>
+</tr>
+<tr>
+<td>``</td>
+<td></td>
+</tr>
+<tr>
+<td>``</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Untuk membuktikan variabel <code>$_SERVER</code> mari kita bongkar isinya </p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nb">var_dump</span><span class="p">(</span><span class="nv">$_SERVER</span><span class="p">);</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="cp">?&gt;</span>
+</code></pre></div>
+<p>Karena tidak semua data kita butuhkan, sebagai contoh penggunaan, mari kita coba tampilkan beberapa saja.</p>
+<div class="admonition warning">
+<p class="admonition-title">Peringatan</p>
+<ul>
+<li>Karena berkaitan dengan HTTP, maka jalankan script PHP berikut dengan PHP Server Mode.</li>
+<li>Buka terminal pada Visual Studio Code dan jalankan command <code>php -S localhost:80</code> lalu  <kbd>Enter</kbd>.</li>
+<li>Semisal saya menyimpan file nya dengan nama <code>server02.php</code>, maka buka di browser dan ketikkan pada address bar <code>localhost/server02.php</code>.</li>
+</ul>
+</div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="k">echo</span> <span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">&#39;PHP_SELF&#39;</span><span class="p">]</span> <span class="o">.</span> <span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">;</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="k">echo</span> <span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">&#39;SERVER_NAME&#39;</span><span class="p">]</span> <span class="o">.</span> <span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">;</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="k">echo</span> <span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">&#39;HTTP_HOST&#39;</span><span class="p">]</span> <span class="o">.</span> <span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">;</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="k">echo</span> <span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">&#39;HTTP_USER_AGENT&#39;</span><span class="p">]</span> <span class="o">.</span> <span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">;</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="k">echo</span> <span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">&#39;SCRIPT_NAME&#39;</span><span class="p">]</span> <span class="o">.</span> <span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">;</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="cp">?&gt;</span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Catatan</p>
+<ul>
+<li>Selain variabel superglobal <code>$GLOBAL</code> dan <code>$_SERVER</code>, PHP masih menyediakan variabel yang lain, akan kita bahas sebentar lagi.</li>
+<li>Setiap variabel superglobal pasti ditulis menggunakan huruf kapital dan biasanya diawali dengan tanda <em>underscore</em>, seperti <code>$_SESSION</code>, <code>$_FILES</code>, <code>$_SESSION</code> dsb.</li>
+</ul>
+</div>
 
 
 
