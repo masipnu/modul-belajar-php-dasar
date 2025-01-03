@@ -1,7 +1,7 @@
 <?php
 session_start();
-$_SESSION['username'] = $_POST['username'];
-$_SESSION['password'] = $_POST['password'];
+$_SESSION['username'] = "Administrator";
+$_SESSION['password'] = "rahasia";
 
 echo "Session telah dibuat..!";
 echo "<br>";

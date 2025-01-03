@@ -9,7 +9,7 @@ nav:
   - Mengenal PHP: 01.md
   - Dasar-dasar PHP: 02.md
   - Function: 03.md
-  - Variabel Superglobal: 04.md
+  - Variable Scope: 04.md
   - Session: 05.md
   - Cookie: 06.md
   - Form: 07.md

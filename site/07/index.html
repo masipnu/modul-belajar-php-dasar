@@ -366,7 +366,7 @@
         
   
   <span class="md-ellipsis">
-    Variabel Superglobal
+    Variable Scope
   </span>
   
 
@@ -428,6 +428,8 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
@@ -456,6 +458,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -464,16 +468,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#penanganan-form" class="md-nav__link">
-    <span class="md-ellipsis">
-      Penanganan Form
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Penanganan Form">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#variabel-_get" class="md-nav__link">
     <span class="md-ellipsis">
       Variabel $_GET
@@ -481,8 +475,8 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#variabel-_post" class="md-nav__link">
     <span class="md-ellipsis">
       Variabel $_POST
@@ -490,18 +484,13 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#variabel-_files" class="md-nav__link">
     <span class="md-ellipsis">
       Variabel $_FILES
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -590,6 +579,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -598,16 +589,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#penanganan-form" class="md-nav__link">
-    <span class="md-ellipsis">
-      Penanganan Form
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Penanganan Form">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#variabel-_get" class="md-nav__link">
     <span class="md-ellipsis">
       Variabel $_GET
@@ -615,8 +596,8 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#variabel-_post" class="md-nav__link">
     <span class="md-ellipsis">
       Variabel $_POST
@@ -624,18 +605,13 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#variabel-_files" class="md-nav__link">
     <span class="md-ellipsis">
       Variabel $_FILES
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -654,12 +630,156 @@
                   
 
 
-  <h1>Form</h1>
-
-<h2 id="penanganan-form">Penanganan Form</h2>
-<h3 id="variabel-_get">Variabel $_GET</h3>
-<h3 id="variabel-_post">Variabel $_POST</h3>
-<h3 id="variabel-_files">Variabel $_FILES</h3>
+<h1 id="penanganan-form">Penanganan Form</h1>
+<ul>
+<li>Salah satu fungsi utama PHP adalah memungkinkan adanya interaksi antara aplikasi web dengan user.</li>
+<li>Media untuk melakukan interaksi ini salah satunya adalah form.</li>
+<li>Untuk memproses data yang dikirim oleh form ada beberapa variabel superglobal yang sering digunakan.</li>
+</ul>
+<h2 id="variabel-_get">Variabel $_GET</h2>
+<ul>
+<li>Variabel <code>$_GET</code> menyimpan array data yang dikirim oleh form dengan method GET melalui URL, atau biasa disebut sebagai <strong><em>Query string</em></strong>.</li>
+<li>Data yang dikirim akan terlihat pada URL.</li>
+<li>Penggunaan method GET tidak cocok untuk mengirimkan data yang sensitif, semisal password dan sebagainya.</li>
+</ul>
+<p><strong>Contoh: <code>form_get.php</code></strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="x">&lt;!DOCTYPE html&gt;</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="x">&lt;html lang=&quot;en&quot;&gt;</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="x">&lt;head&gt;</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="x">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="x">    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="x">    &lt;title&gt;Form Get&lt;/title&gt;</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="x">&lt;/head&gt;</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="x">&lt;body&gt;</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="x">    &lt;form action=&quot;&quot; method=&quot;get&quot;&gt;</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="x">        &lt;input type=&quot;text&quot; name=&quot;kata&quot; id=&quot;kata&quot;&gt;</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="x">        &lt;input type=&quot;submit&quot; value=&quot;Cari&quot;&gt;</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="x">    &lt;/form&gt;</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="x">    </span><span class="cp">&lt;?php</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>    <span class="k">if</span><span class="p">(</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$_GET</span><span class="p">[</span><span class="s1">&#39;kata&#39;</span><span class="p">])){</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>        <span class="k">echo</span> <span class="s2">&quot;Anda sedang mencari kata &lt;b&gt;</span><span class="si">{</span><span class="nv">$_GET</span><span class="p">[</span><span class="s1">&#39;kata&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&lt;/b&gt;&quot;</span><span class="p">;</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>    <span class="p">}</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>    <span class="cp">?&gt;</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="x">&lt;/body&gt;</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="x">&lt;/html&gt;</span>
+</code></pre></div>
+<div class="admonition example">
+<p class="admonition-title">Uji Coba</p>
+<ul>
+<li>Akses skrip di atas dari browser.</li>
+<li>Masukkan sebuah kata pada kotak pencarian, dan klik tombol <kbd> Cari </kbd>.</li>
+<li>Akan muncul keterangan di bawah form.</li>
+<li>Perhatikan juga URL pada address bar.</li>
+</ul>
+</div>
+<h2 id="variabel-_post">Variabel $_POST</h2>
+<ul>
+<li>Variabel <code>$_POST</code> menyimpan array data yang dikirim oleh form dengan method POST melalui HTTP POST.</li>
+<li>Data yang dikirim tidak akan tampak pada URL, sehingga lebih aman daripada <code>$_GET</code>.</li>
+</ul>
+<p><strong>Contoh: form_post.php</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="x">&lt;!DOCTYPE html&gt;</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="x">&lt;html lang=&quot;en&quot;&gt;</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="x">&lt;head&gt;</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="x">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="x">    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="x">    &lt;title&gt;Form POST&lt;/title&gt;</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="x">    &lt;style&gt;</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="x">        body{</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="x">            font-family:arial;</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="x">            text-align:center;</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="x">        }</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="x">        input{</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="x">            margin:10px;</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="x">            padding:10px;</span>
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="x">            filter:drop-shadow(5px 5px gray);</span>
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="x">        }</span>
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="x">    &lt;/style&gt;</span>
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="x">&lt;/head&gt;</span>
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="x">&lt;body&gt;</span>
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="x">    &lt;form action=&quot;&quot; method=&quot;post&quot;&gt;</span>
+<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="x">        &lt;h2&gt;Login&lt;/h2&gt;</span>
+<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a><span class="x">        &lt;input type=&quot;text&quot; name=&quot;username&quot; placeholder=&quot;Username&quot;&gt;</span>
+<a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a><span class="x">        &lt;br&gt;</span>
+<a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a><span class="x">        &lt;input type=&quot;password&quot; name=&quot;password&quot; placeholder=&quot;Password&quot;&gt;</span>
+<a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a><span class="x">        &lt;br&gt;</span>
+<a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a><span class="x">        &lt;input type=&quot;reset&quot; value=&quot;Batal&quot;&gt;</span>
+<a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a><span class="x">        &lt;input type=&quot;submit&quot; value=&quot;Login&quot;&gt;</span>
+<a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a><span class="x">        &lt;br&gt;</span>
+<a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a><span class="x">    &lt;/form&gt;</span>
+<a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a><span class="x">    </span><span class="cp">&lt;?php</span>
+<a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a>        <span class="k">if</span><span class="p">(</span><span class="nv">$_SERVER</span><span class="p">[</span><span class="s2">&quot;REQUEST_METHOD&quot;</span><span class="p">]</span><span class="o">==</span><span class="s2">&quot;POST&quot;</span><span class="p">){</span>
+<a id="__codelineno-1-32" name="__codelineno-1-32" href="#__codelineno-1-32"></a>            <span class="k">echo</span> <span class="s2">&quot;Username : &lt;b&gt;</span><span class="si">$_POST[username]</span><span class="s2">&lt;/b&gt;&quot;</span><span class="p">;</span>
+<a id="__codelineno-1-33" name="__codelineno-1-33" href="#__codelineno-1-33"></a>            <span class="k">echo</span> <span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">;</span>
+<a id="__codelineno-1-34" name="__codelineno-1-34" href="#__codelineno-1-34"></a>            <span class="k">echo</span> <span class="s2">&quot;Password : &lt;b&gt;</span><span class="si">$_POST[password]</span><span class="s2">&lt;/b&gt;&quot;</span><span class="p">;</span>
+<a id="__codelineno-1-35" name="__codelineno-1-35" href="#__codelineno-1-35"></a>        <span class="p">}</span>
+<a id="__codelineno-1-36" name="__codelineno-1-36" href="#__codelineno-1-36"></a>    <span class="cp">?&gt;</span>
+<a id="__codelineno-1-37" name="__codelineno-1-37" href="#__codelineno-1-37"></a><span class="x">&lt;/body&gt;</span>
+<a id="__codelineno-1-38" name="__codelineno-1-38" href="#__codelineno-1-38"></a><span class="x">&lt;/html&gt;</span>
+</code></pre></div>
+<div class="admonition example">
+<p class="admonition-title">Uji Coba</p>
+<ul>
+<li>Akses skrip di atas dari browser.</li>
+<li>Masukkan username dan password pada form dan klik tombol <kbd> Login </kbd>.</li>
+<li>Akan muncul keterangan di bawah form.</li>
+<li>Tombol <kbd> Batal </kbd> digunakan untuk menghapus input user.</li>
+</ul>
+</div>
+<h2 id="variabel-_files">Variabel $_FILES</h2>
+<ul>
+<li>Variabel <code>$_FILES</code> hanya menyimpan data yang dikirim dari input dengan tipe file.</li>
+<li>Biasa digunakan untuk proses upload file.</li>
+<li>Agar file dapat terupload, pada tag <code>&lt;form&gt;</code> harus ditambah atribut <code>enctype="multipart/form-data"</code>.</li>
+</ul>
+<p><strong>Contoh : form_files.php</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="x">&lt;!DOCTYPE html&gt;</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="x">&lt;html lang=&quot;en&quot;&gt;</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="x">&lt;head&gt;</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="x">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="x">    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="x">    &lt;title&gt;Form Upload&lt;/title&gt;</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="x">    &lt;style&gt;</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="x">        body{</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="x">            font-family:arial;</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="x">            text-align:center;</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="x">        }</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="x">    &lt;/style&gt;</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="x">&lt;/head&gt;</span>
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="x">&lt;body&gt;</span>
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="x">    &lt;h2&gt;Upload File&lt;/h2&gt;</span>
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="x">    &lt;form action=&quot;&quot; method=&quot;post&quot; enctype=&quot;multipart/form-data&quot;&gt;</span>
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="x">        &lt;input type=&quot;file&quot; name=&quot;foto&quot; id=&quot;foto&quot;&gt;</span>
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="x">        &lt;input type=&quot;submit&quot; value=&quot;Upload&quot;&gt;</span>
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="x">    &lt;/form&gt;</span>
+<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a>
+<a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a><span class="x">    </span><span class="cp">&lt;?php</span>
+<a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a>        <span class="k">if</span><span class="p">(</span><span class="nv">$_SERVER</span><span class="p">[</span><span class="s2">&quot;REQUEST_METHOD&quot;</span><span class="p">]</span><span class="o">==</span><span class="s2">&quot;POST&quot;</span><span class="p">){</span>
+<a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a>            <span class="nv">$namafile</span> <span class="o">=</span> <span class="nv">$_FILES</span><span class="p">[</span><span class="s1">&#39;foto&#39;</span><span class="p">][</span><span class="s1">&#39;name&#39;</span><span class="p">];</span>
+<a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a>            <span class="nv">$lokasifile</span> <span class="o">=</span> <span class="nv">$_FILES</span><span class="p">[</span><span class="s1">&#39;foto&#39;</span><span class="p">][</span><span class="s1">&#39;tmp_name&#39;</span><span class="p">];</span>
+<a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a>
+<a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a>            <span class="k">if</span><span class="p">(</span><span class="nv">$namafile</span> <span class="o">!=</span> <span class="s2">&quot;&quot;</span><span class="p">){</span>
+<a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a>                <span class="nb">move_uploaded_file</span><span class="p">(</span><span class="nv">$lokasifile</span><span class="p">,</span><span class="s2">&quot;file/&quot;</span><span class="o">.</span><span class="nv">$namafile</span><span class="p">);</span>
+<a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a>                <span class="k">echo</span> <span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">;</span>
+<a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a>                <span class="k">echo</span> <span class="s2">&quot;&lt;img src=&#39;file/</span><span class="si">$namafile</span><span class="s2">&#39; width=&#39;50%&#39;&gt;&quot;</span><span class="p">;</span>
+<a id="__codelineno-2-30" name="__codelineno-2-30" href="#__codelineno-2-30"></a>            <span class="p">}</span>
+<a id="__codelineno-2-31" name="__codelineno-2-31" href="#__codelineno-2-31"></a>        <span class="p">}</span>
+<a id="__codelineno-2-32" name="__codelineno-2-32" href="#__codelineno-2-32"></a>    <span class="cp">?&gt;</span>
+<a id="__codelineno-2-33" name="__codelineno-2-33" href="#__codelineno-2-33"></a><span class="x">&lt;/body&gt;</span>
+<a id="__codelineno-2-34" name="__codelineno-2-34" href="#__codelineno-2-34"></a><span class="x">&lt;/html&gt; </span>
+</code></pre></div>
+<div class="admonition example">
+<p class="admonition-title">Uji Coba</p>
+<ul>
+<li>Sebelum dicoba, buat 1 folder sejajar dengan skrip di atas dengan nama <code>file</code>.</li>
+<li>Akses skrip di atas dari browser.</li>
+<li>Pilih 1 file dari komputer dengan klik tombol <kbd> Chose file </kbd>, lalu klik <kbd> Upload </kbd>.</li>
+<li>Setelah terupload, maka file akan disimpan di dalam folder <code>file</code> yang baru saja kita buat.</li>
+<li>Browser akan <em>refresh</em> dan gambar langsung ditampilkan di browser.</li>
+<li><strong>Respect</strong> 🫡</li>
+</ul>
+</div>
 
 
 

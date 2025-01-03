@@ -366,7 +366,7 @@
         
   
   <span class="md-ellipsis">
-    Variabel Superglobal
+    Variable Scope
   </span>
   
 
@@ -388,17 +388,8 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Session
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -409,32 +400,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#session" class="md-nav__link">
-    <span class="md-ellipsis">
-      Session
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
       
     </li>
   
@@ -557,23 +522,8 @@
   
   
   
+    
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#session" class="md-nav__link">
-    <span class="md-ellipsis">
-      Session
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
   
 </nav>
                   </div>
@@ -588,9 +538,61 @@
                   
 
 
-  <h1>Session</h1>
-
-<h2 id="session">Session</h2>
+<h1 id="session">Session</h1>
+<ul>
+<li>Seperti variabel, session digunakan untuk menyimpan suatu nilai.</li>
+<li>Bedanya, jika session telah dibuat dalam suatu file, session dapat diakses oleh file lain selama session belum dihapus atau browser belum ditutup.</li>
+<li>Session biasanya digunakan untuk pembuatan login user.</li>
+<li>Dengan session, dapat dicek apakah user sudah login atau belum.</li>
+<li>Session dibuat menggunakan superglobal variabel <code>$_SESSION[]</code>.</li>
+<li>Sebelum menggunakan session, kita harus menjalankan funnction <code>session_start()</code>.</li>
+<li>Untuk menghapus session bisa menggunakan fungsi <code>session_destroy()</code>, atau jika browser ditutup, session secara otomatis akan dihapus.</li>
+</ul>
+<p><strong>Contoh:</strong></p>
+<p>File <code>session.php</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nb">session_start</span><span class="p">();</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">&#39;username&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Administrator&quot;</span><span class="p">;</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">&#39;password&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;rahasia&quot;</span><span class="p">;</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="k">echo</span> <span class="s2">&quot;Session telah dibuat..!&quot;</span><span class="p">;</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="k">echo</span> <span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">;</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="k">echo</span> <span class="s2">&quot;&lt;a href=&#39;session_cek.php&#39;&gt;Cek Session&lt;/a&gt;&quot;</span><span class="p">;</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="cp">?&gt;</span>
+</code></pre></div>
+<ul>
+<li>Jika file tersebut dibuka dari browser, maka akan dibuat sebuah session.</li>
+<li>Ketika tombol <code>Cek Session</code> diklik, maka kita akan diarahkan ke pada file <code>session_cek.php</code>.</li>
+<li>Walaupun berbeda file, data session akan bisa terbaca.</li>
+</ul>
+<p>Sekarang kita buat file <code>session_cek.php</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nb">session_start</span><span class="p">();</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="k">empty</span><span class="p">(</span><span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">&#39;username&#39;</span><span class="p">])</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="k">empty</span><span class="p">(</span><span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">&#39;password&#39;</span><span class="p">])){</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>    <span class="k">echo</span> <span class="s2">&quot;Username : &quot;</span> <span class="o">.</span> <span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">&#39;username&#39;</span><span class="p">]</span> <span class="o">.</span> <span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">;</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>    <span class="k">echo</span> <span class="s2">&quot;Password : &quot;</span> <span class="o">.</span> <span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">&#39;password&#39;</span><span class="p">]</span> <span class="o">.</span> <span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">;</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>    <span class="k">echo</span> <span class="s2">&quot;&lt;a href=&#39;session_hapus.php&#39;&gt;Hapus Session&lt;/a&gt;&quot;</span><span class="p">;</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="p">}</span><span class="k">else</span><span class="p">{</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>    <span class="k">echo</span> <span class="s2">&quot;Sesi telah dihapus &lt;br&gt;&quot;</span><span class="p">;</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>    <span class="k">echo</span> <span class="s2">&quot;&lt;a href=&#39;session.php&#39;&gt;Buat Session&lt;/a&gt;&quot;</span><span class="p">;</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="p">}</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="cp">?&gt;</span>
+</code></pre></div>
+<p>Sekarang, untuk menghapus session, kita buat file <code>session_hapus.php</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nb">session_start</span><span class="p">();</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="nb">session_destroy</span><span class="p">();</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="k">echo</span> <span class="s2">&quot;Session telah dihapus..!&quot;</span><span class="p">;</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="k">echo</span> <span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">;</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="k">echo</span> <span class="s2">&quot;&lt;a href=&#39;session_cek.php&#39;&gt;Cek Session&lt;/a&gt;&quot;</span><span class="p">;</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="cp">?&gt;</span>
+</code></pre></div>
+<ul>
+<li>Dengan menjalankan skrip di atas, maka session akan dihapus.</li>
+<li>Coba buka lagi dari browser file-file di atas mulai dari <code>session.php</code> dan pahami maksudnya.</li>
+</ul>
 
 
 

@@ -5,14 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Form Upload</title>
     <style>
-                body{
+        body{
             font-family:arial;
             text-align:center;
-        }
-        input{
-            margin:10px;
-            padding:10px;
-            /* filter:drop-shadow(5px 5px gray); */
         }
     </style>
 </head>
