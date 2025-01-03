@@ -1603,186 +1603,218 @@ S</p>
 <table>
 <thead>
 <tr>
-<th style="text-align: center;">Function</th>
+<th>Function</th>
 <th>Keterangan</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: center;"><code>basename(path, suffix)</code></td>
+<td><code>basename(path, suffix)</code></td>
 <td>Menghasilkan nama file dari sebuah path.</td>
 </tr>
 <tr>
-<td style="text-align: center;"></td>
-<td></td>
+<td><code>chgrp(file, group)</code></td>
+<td>Mengubah file group.</td>
 </tr>
 <tr>
-<td style="text-align: center;"></td>
-<td></td>
+<td><code>chmod(file, mode)</code></td>
+<td>Mengubah file mode.</td>
 </tr>
 <tr>
-<td style="text-align: center;"></td>
-<td></td>
+<td><code>chown(file, owner)</code></td>
+<td>Mengubah pemilik file.</td>
 </tr>
 <tr>
-<td style="text-align: center;"></td>
-<td></td>
+<td><code>copy(file, file_tujuan)</code></td>
+<td>Mencopy file.</td>
 </tr>
 <tr>
-<td style="text-align: center;"></td>
-<td></td>
+<td><code>dirname(path)</code></td>
+<td>Menghasilkan nama direktori dari sebuah path.</td>
 </tr>
 <tr>
-<td style="text-align: center;"></td>
-<td></td>
+<td><code>disk_free_space(direktori)</code></td>
+<td>Menghasilkan sisa kapasitas penyimpanan sebuah direktori.</td>
 </tr>
 <tr>
-<td style="text-align: center;"></td>
-<td></td>
+<td><code>disc_total_space(direktori)</code></td>
+<td>Menghasilkan total kapasitas penyimpanan sebuah direktori.</td>
 </tr>
 <tr>
-<td style="text-align: center;"></td>
-<td></td>
+<td><code>fclose(file)</code></td>
+<td>Menutup file yang sedang dibuka.</td>
 </tr>
 <tr>
-<td style="text-align: center;"></td>
-<td></td>
+<td><code>foef(file)</code></td>
+<td>Mengecek akhir sebuah file yagn dibuka.</td>
 </tr>
 <tr>
-<td style="text-align: center;"></td>
-<td></td>
+<td><code>fgetc(file)</code></td>
+<td>Menghasilkan karakter dari file yang dibuka.</td>
 </tr>
 <tr>
-<td style="text-align: center;"></td>
-<td></td>
+<td><code>fgets(file, panjang)</code></td>
+<td>Menghasilkan baris dari sebuah file yagn dibuka.</td>
 </tr>
 <tr>
-<td style="text-align: center;"></td>
-<td></td>
+<td><code>fgetss(file, panjang, tag)</code></td>
+<td>Menghasilkan baris dengan menghapus tag HTML dan PHP dari file yang dibuka.</td>
 </tr>
 <tr>
-<td style="text-align: center;"></td>
-<td></td>
+<td><code>file(path, include_path, context)</code></td>
+<td>Membaca file ke dalam sebuah array.</td>
 </tr>
 <tr>
-<td style="text-align: center;"></td>
-<td></td>
+<td><code>file_exists(path)</code></td>
+<td>Mengecek keberadaan file.</td>
 </tr>
 <tr>
-<td style="text-align: center;"></td>
-<td></td>
+<td><code>file_get_contents(path, include_path, context, awal, panjang_maksimal)</code></td>
+<td>Membaca file ke dalam sebuah string.</td>
 </tr>
 <tr>
-<td style="text-align: center;"></td>
-<td></td>
+<td><code>file_put_contents(file, data, mode, context)</code></td>
+<td>Menuliskan string ke dalam sebuah file.</td>
 </tr>
 <tr>
-<td style="text-align: center;"></td>
-<td></td>
+<td><code>fileatime(nama_file)</code></td>
+<td>Menghasilkan waktu terakhir file diakses.</td>
 </tr>
 <tr>
-<td style="text-align: center;"></td>
-<td></td>
+<td><code>filectime(nama_file)</code></td>
+<td>Menghasilkan waktu terakhir fiel diubah.</td>
 </tr>
 <tr>
-<td style="text-align: center;"></td>
-<td></td>
+<td><code>filegroup(nama_file)</code></td>
+<td>Menghasilkan ID group sebuah file.</td>
 </tr>
 <tr>
-<td style="text-align: center;"></td>
-<td></td>
+<td><code>filemtime(nama_file)</code></td>
+<td>Menghasilkan waktu terakhir file dimodifikasi.</td>
 </tr>
 <tr>
-<td style="text-align: center;"></td>
-<td></td>
+<td><code>fileowner(nama_file)</code></td>
+<td>Menghasilkan ID user dari sebuah file.</td>
 </tr>
 <tr>
-<td style="text-align: center;"></td>
-<td></td>
+<td><code>fileperms(nama_file)</code></td>
+<td>Menghasilkan permission sebuah file.</td>
 </tr>
 <tr>
-<td style="text-align: center;"></td>
-<td></td>
+<td><code>filesize(nama_file)</code></td>
+<td>Menghasilkan ukuran sebuah file.</td>
 </tr>
 <tr>
-<td style="text-align: center;"></td>
-<td></td>
+<td><code>filetype(nama_file)</code></td>
+<td>Menghasilkan tipe sebuah file.</td>
 </tr>
 <tr>
-<td style="text-align: center;"></td>
-<td></td>
+<td><code>flock(file, lock, block)</code></td>
+<td>Mengunci dan membebaskan file. Lock dapat diisi <code>LOCK_SH</code>, <code>LOCK_EX</code>, <code>LOCK_UN</code>,<code>LOCK_NB</code>.</td>
 </tr>
 <tr>
-<td style="text-align: center;"></td>
-<td></td>
+<td><code>fopen(nama_file, mode, include_path, context)</code></td>
+<td>Membuka file atau membuat file jika file yang dibuka tidak ada.</td>
 </tr>
 <tr>
-<td style="text-align: center;"></td>
-<td></td>
+<td><code>fputs(file, string, panjang)</code></td>
+<td>Menuliskan sesuatu pada file yang dibuka.</td>
 </tr>
 <tr>
-<td style="text-align: center;"></td>
-<td></td>
+<td><code>fread(file, panjang)</code></td>
+<td>Membaca dari file yang dibuka.</td>
 </tr>
 <tr>
-<td style="text-align: center;"></td>
-<td></td>
+<td><code>fseek(file ofset, whence)</code></td>
+<td>Melakukan pencarian pada file yang dibuka. <code>Whence</code> dapat diisi <code>SEEK_SET</code>,<code>SEEK_CUR</code>, <code>SEEK_END</code>.</td>
 </tr>
 <tr>
-<td style="text-align: center;"></td>
-<td></td>
+<td><code>fstat(file)</code></td>
+<td>Menghasilkan informasi tentang file yang dibuka.</td>
 </tr>
 <tr>
-<td style="text-align: center;"></td>
-<td></td>
+<td><code>ftell(file)</code></td>
+<td>Menghasilkan posisi saat ini dari file yang dibuka.</td>
 </tr>
 <tr>
-<td style="text-align: center;"></td>
-<td></td>
+<td><code>fwrite(file, string, length)</code></td>
+<td>Menuliskan sesuatu pada file yang dibuka.</td>
 </tr>
 <tr>
-<td style="text-align: center;"></td>
-<td></td>
+<td><code>is_dir(file)</code></td>
+<td>Mengecek apakah sebuah file merupakan direktori.</td>
 </tr>
 <tr>
-<td style="text-align: center;"></td>
-<td></td>
+<td><code>is_executable(file)</code></td>
+<td>Mengecek apakah sebuah file executabel.</td>
 </tr>
 <tr>
-<td style="text-align: center;"></td>
-<td></td>
+<td><code>is_file(file)</code></td>
+<td>Mengecek apakah sebuah file merupakan file biasa.</td>
 </tr>
 <tr>
-<td style="text-align: center;"></td>
-<td></td>
+<td><code>is_link(file)</code></td>
+<td>Mengecek apakah sebuah file merupakan link.</td>
 </tr>
 <tr>
-<td style="text-align: center;"></td>
-<td></td>
+<td><code>is_readable(file)</code></td>
+<td>Mengecek apakah sebuah file readable.</td>
 </tr>
 <tr>
-<td style="text-align: center;"></td>
-<td></td>
+<td><code>is_uploaded_file(file)</code></td>
+<td>Mengecek apakah sebuah file ter-upload.</td>
 </tr>
 <tr>
-<td style="text-align: center;"></td>
-<td></td>
+<td><code>is_writable(file)</code></td>
+<td>Mengecek apakah sebuah file writable.</td>
 </tr>
 <tr>
-<td style="text-align: center;"></td>
-<td></td>
+<td><code>mkdir(path, mode, recursive, context)</code></td>
+<td>Membuat direktori.</td>
 </tr>
 <tr>
-<td style="text-align: center;"></td>
-<td></td>
+<td><code>move_uploaded_file(file, lokasi_baru)</code></td>
+<td>Memindahkan file yang ter-upload ke sebuah direktori.</td>
 </tr>
 <tr>
-<td style="text-align: center;"></td>
-<td></td>
+<td><code>pathinfo(path, option)</code></td>
+<td>Menghasilkan informasi sebuah path.</td>
 </tr>
 <tr>
-<td style="text-align: center;"></td>
-<td></td>
+<td><code>realpath(path)</code></td>
+<td>Menghasilkan absolute path-name.</td>
+</tr>
+<tr>
+<td><code>realpath_cache_get()</code></td>
+<td>Menghasilkan entri cache sebuah realpath.</td>
+</tr>
+<tr>
+<td><code>realpath_cache_size()</code></td>
+<td>Menghasilkan ukuran cache sebuah realpath.</td>
+</tr>
+<tr>
+<td><code>rename(nama_lama, nama_baru, context)</code></td>
+<td>Mengubah nama file atau direktori.</td>
+</tr>
+<tr>
+<td><code>rmdir(direktori, context)</code></td>
+<td>Menghapus direktori yang kosong.</td>
+</tr>
+<tr>
+<td><code>tmpnam(direktori, prefix)</code></td>
+<td>Membuat temporary file dengan nama unik.</td>
+</tr>
+<tr>
+<td><code>tmpfile()</code></td>
+<td>Membuat file sementara dengan nama unik, setelah skrip selesai, maka file tersebut langsung dihapus</td>
+</tr>
+<tr>
+<td><code>unmask(mask)</code></td>
+<td>Mengubah permission sebuah file.</td>
+</tr>
+<tr>
+<td><code>unlink(nama_file, context)</code></td>
+<td>Menghapus file.</td>
 </tr>
 </tbody>
 </table>
