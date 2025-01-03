@@ -366,7 +366,7 @@
         
   
   <span class="md-ellipsis">
-    Variabel Superglobal
+    Variable Scope
   </span>
   
 
@@ -408,17 +408,8 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Cookie
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -429,32 +420,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#cookie" class="md-nav__link">
-    <span class="md-ellipsis">
-      Cookie
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
       
     </li>
   
@@ -557,23 +522,8 @@
   
   
   
+    
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#cookie" class="md-nav__link">
-    <span class="md-ellipsis">
-      Cookie
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
   
 </nav>
                   </div>
@@ -588,9 +538,57 @@
                   
 
 
-  <h1>Cookie</h1>
-
-<h2 id="cookie">Cookie</h2>
+<h1 id="cookie">Cookie</h1>
+<ul>
+<li>Hampir mirip dengan session, namun data cookie tidak akan terhapus ketika browser ditutup.</li>
+<li>Data cookie akan terhapus setelah batas waktu yang ditentukan.</li>
+<li>Cara membuat cookie adalah dengan function <code>setcookie()</code> dengan format <code>setcookie(nama_cookie, nilai, batas_akhir)</code>.</li>
+<li>Batas akhir cookie dihitung dengan satuan detik.</li>
+<li>Untuk menampilkan cookie menggunakan variabel superglobal <code>$_COOKIE['nama_cookie']</code>.</li>
+</ul>
+<p>Sebagai contoh mari kita buat 2 file yaitu : <code>cookie.php</code> dan <code>cookie_cek.php</code>.</p>
+<p><strong>File 1 : <code>cookie.php</code></strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="c1">// Mengatur timezone Indonesia</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nb">date_default_timezone_set</span><span class="p">(</span><span class="s2">&quot;Asia/Jakarta&quot;</span><span class="p">);</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="c1">// Membuat batas cookie</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="nv">$batas</span> <span class="o">=</span> <span class="nb">time</span><span class="p">()</span><span class="o">+</span><span class="mi">30</span><span class="p">;</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="c1">// Membuat cookie</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="nb">setcookie</span><span class="p">(</span><span class="s2">&quot;KunjunganTerakhir&quot;</span><span class="p">,</span> <span class="nb">date</span><span class="p">(</span><span class="s1">&#39;H:i:s&#39;</span><span class="p">),</span> <span class="nv">$batas</span><span class="p">);</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="c1">// Menampilkan pesan</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="k">echo</span> <span class="s2">&quot;Cookie telah dibuat..!&quot;</span><span class="p">;</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="k">echo</span> <span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">;</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="k">echo</span> <span class="s2">&quot;Cek cookie sebelum dan setelah 30 detik dari sekarang..!&quot;</span><span class="p">;</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="k">echo</span> <span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">;</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="k">echo</span> <span class="s2">&quot;&lt;a href=&#39;cookie_cek.php&#39;&gt;Cek Cookie&lt;/a&gt;&quot;</span><span class="p">;</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="cp">?&gt;</span>
+</code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">Tips</p>
+<p>Jika kamu paham maksud kodenya, atau jika ingin penulisan yang lebih ringkas, kamu tidak perlu menuliskan beris komentar. 😊</p>
+</div>
+<p><strong>File 2 : <code>cookie_cek.php</code></strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="k">if</span><span class="p">(</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$_COOKIE</span><span class="p">[</span><span class="s1">&#39;KunjunganTerakhir&#39;</span><span class="p">])){</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>    <span class="k">echo</span> <span class="s2">&quot;Anda terakhir membuat &lt;b&gt;cookie&lt;/b&gt; &quot;</span><span class="p">;</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>    <span class="k">echo</span> <span class="s2">&quot;pada jam </span><span class="si">{</span><span class="nv">$_COOKIE</span><span class="p">[</span><span class="s1">&#39;KunjunganTerakhir&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">;</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="p">}</span><span class="k">else</span><span class="p">{</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>    <span class="k">echo</span> <span class="s2">&quot;Anda terakhir membuat cookie &quot;</span><span class="p">;</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>    <span class="k">echo</span> <span class="s2">&quot;lewat dari 30 detik yang lalu.&quot;</span><span class="p">;</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="p">}</span>
+</code></pre></div>
+<div class="admonition example">
+<p class="admonition-title">Ujii Coba</p>
+<ul>
+<li>Sekarang akses file <code>cookie.php</code> dari browser.</li>
+<li>Lalu klik link <code>Cek Cookie</code> untuk mengecek data cookie.</li>
+<li>Tunggu 30 detik, lalu <em>re-fresh</em> halaman, maka data cookie sudah hilang, karena kita mengatur batas cookie hanya bertahan selama 30 detik.</li>
+</ul>
+</div>
 
 
 
