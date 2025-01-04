@@ -531,9 +531,18 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#setting-ekstensi-phpmysqli" class="md-nav__link">
+  <a href="#setting-ekstensi-mysqli" class="md-nav__link">
     <span class="md-ellipsis">
-      Setting Ekstensi phpmysqli
+      Setting Ekstensi mysqli
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#membuat-sample-database" class="md-nav__link">
+    <span class="md-ellipsis">
+      Membuat Sample Database
     </span>
   </a>
   
@@ -714,9 +723,18 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#setting-ekstensi-phpmysqli" class="md-nav__link">
+  <a href="#setting-ekstensi-mysqli" class="md-nav__link">
     <span class="md-ellipsis">
-      Setting Ekstensi phpmysqli
+      Setting Ekstensi mysqli
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#membuat-sample-database" class="md-nav__link">
+    <span class="md-ellipsis">
+      Membuat Sample Database
     </span>
   </a>
   
@@ -1008,24 +1026,181 @@
 <h2 id="praktik-koneksi-database">Praktik Koneksi Database</h2>
 <p>Agar dapat lebih memahami fungsi-fungsi database pada bahasa pemrograman PHP, mari kita melakukan uji coba.</p>
 <h3 id="instalasi-server">Instalasi Server</h3>
+<div class="admonition warning">
+<p class="admonition-title">Perhatian</p>
+<p>Jika anda sudah mempelajari <a href="https://masipnu.github.io/tutorial-mysql/"><strong>Tutorial Database MySQL</strong></a> dari panduan yang telah saya buat, maka anda bisa melewai langkah ini.</p>
+</div>
 <p>Sebelum mengakses database menggunakan PHP, silahkan install dulu salah satu server database berikut.</p>
 <ul>
 <li>MySQL <a href="https://dev.mysql.com/downloads/mysql/"> <strong>⬇️ Link Download</strong></a></li>
 <li>MariaDB <a href="https://mariadb.org/download/?t=mariadb&amp;p=mariadb&amp;r=11.6.2&amp;os=windows&amp;cpu=x86_64&amp;pkg=msi&amp;mirror=vhost_sg"> <strong>⬇️ Link Download</strong></a></li>
 </ul>
 <p>Saya sendiri sebenarnya lebih suka <mark>MariaDB</mark>, karena aplikasinya opensource dan saat ini lebih aktif dikembangkan daripada MySQL.</p>
-<div class="admonition warning">
-<p class="admonition-title">Perhatian</p>
-<p>Jika anda sudah mempelajari <a href="https://masipnu.github.io/tutorial-mysql/"><strong>Tutorial Database MySQL</strong></a> dari panduan yang telah saya buat, maka anda bisa melewai langkah ini.</p>
-</div>
 <h3 id="konfigurasi">Konfigurasi</h3>
-<h4 id="setting-ekstensi-phpmysqli">Setting Ekstensi <code>phpmysqli</code></h4>
+<h4 id="setting-ekstensi-mysqli">Setting Ekstensi <code>mysqli</code></h4>
 <div class="admonition warning">
 <p class="admonition-title">Perhatian</p>
 <p>Jika anda praktik menggunakan paket aplikasi XAMPP, Laragon, AppServ, Uwamp, USBWebserver atau yang lain, anda bisa melewati langkah ini.</p>
 </div>
+<p>Karena sejak awal saya praktik menjakankan file php menggunkanan command promt/ terminal pada aplikasi Visual Studio Code dengan memanfaatkan file binary <code>php.exe</code>, maka jika kita akan bekerja dengan database MySQL/ MariaDB kita perlu mengaktifkan ekstensi <code>mysqli</code>. Berikut langkah-langkahnya.</p>
+<ol>
+<li>Buka file eksporer dan masuk ke direktori file binary php, saya asumsikan di <code>C:\php</code></li>
+<li>Cari file <code>php.ini</code>. Jika file <code>php.ini</code> tidak ada, tentu ada file bernama <code>php.ini-development</code>. Maka copy-paste file tersebut dan rename menjadi <code>php.ini</code></li>
+<li>Buka file <code>php.ini</code> menggunakan Visual Studio Code, atau sebenarnya Notepad saja cukup.</li>
+<li>Cari baris berikut
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="w"> </span><span class="c1">; Directory in which the loadable extensions (modules) reside.</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w"> </span><span class="c1">; https://php.net/extension-dir</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w"> </span><span class="c1">;extension_dir = &quot;./&quot;</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w"> </span><span class="c1">; On windows:</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w"> </span><span class="c1">;extension_dir = &quot;ext&quot;</span>
+</code></pre></div></li>
+<li>Aktifkan pengaturan folder extension dengan menghapus tanda <code>;</code> di depan <code>extension_dir</code>, kurang lebihnya menjadi seperti ini.
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1">; Directory in which the loadable extensions (modules) reside.</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="c1">; https://php.net/extension-dir</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="c1">;extension_dir = &quot;./&quot;</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="c1">; On windows:</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="na">extension_dir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;ext&quot;</span>
+</code></pre></div></li>
+<li>Selanjutnya cari baris berikut
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1">;extension=mysqli</span>
+</code></pre></div></li>
+<li>Aktifkan ekstensi <code>mysqli</code> dengan menghapus tanda <code>;</code> menjadi
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="na">extension</span><span class="o">=</span><span class="s">mysqli</span>
+</code></pre></div></li>
+</ol>
+<h4 id="membuat-sample-database">Membuat Sample Database</h4>
+<ul>
+<li>Karena kita akan memanipulasi database, mari kita buat contoh databasenya.</li>
+<li>Pastikan service <code>MariaDB</code> / <code>MySQL</code> dalam kondisi running.</li>
+<li>Buka aplikasi HeidiSQL, lalu jalankan query berikut untuk membuat database, tabel beserta sample datanya.
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1">-- membuat database sekolah</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">DATABASE</span><span class="w"> </span><span class="n">sekolah</span><span class="p">;</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="c1">-- mengaktifkan database</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="n">USE</span><span class="w"> </span><span class="n">sekolah</span><span class="p">;</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="c1">-- membuat tabel</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="n">siswa</span><span class="p">(</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="n">id</span><span class="w"> </span><span class="nb">INT</span><span class="w"> </span><span class="n">AUTO_INCREMENT</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="p">,</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="n">nama</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="n">kelas</span><span class="w"> </span><span class="nb">INT</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="n">jurusan</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span>
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="p">);</span>
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="c1">-- menambah sample data</span>
+<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">siswa</span>
+<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a><span class="p">(</span><span class="n">nama</span><span class="p">,</span><span class="w"> </span><span class="n">kelas</span><span class="p">,</span><span class="w"> </span><span class="n">jurusan</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span>
+<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a><span class="p">(</span><span class="ss">&quot;Dita Leni Ravia&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;PPLG&quot;</span><span class="w"> </span><span class="p">);</span>
+</code></pre></div></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Catatan</p>
+<p>Anda tidak perlu menulis query di atas secara manual, copy saja dan paste ke tab <code>query</code> yang ada di aplikasi HeidiSQL dan jalankan dengan menekan tombol <span class="keys"><kbd class="key-f9">F9</kbd></span>.</p>
+</div>
 <h4 id="file-configphp">File <code>config.php</code></h4>
+<ul>
+<li>Setelah berhasil mengaktifkan ekstensi <code>mysqli</code> selanjutnya kita buat folder baru untuk menyimpan skrip percobaan CRUD database MySQL dengan PHP.</li>
+<li>Misal, buat folder <code>crud</code>, lalu buat file-file php di dalamnya (sementara kosongan saja) dengan struktur berikut.
+    <div class="no-copy highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>crud
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>├─<span class="w"> </span>config.php
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>├─<span class="w"> </span>edit.php
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>├─<span class="w"> </span>hapus.php
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>├─<span class="w"> </span>index.php
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>└─<span class="w"> </span>tambah.php
+</code></pre></div></li>
+<li>Ketikkan skrip berikut ke dalam file <code>config.php</code>
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="x">  </span><span class="cp">&lt;?php</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>  <span class="c1">// Membuat konfigurasi database</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>  <span class="nv">$host</span> <span class="o">=</span> <span class="s2">&quot;localhost&quot;</span><span class="p">;</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>  <span class="nv">$user</span> <span class="o">=</span> <span class="s2">&quot;root&quot;</span><span class="p">;</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>  <span class="nv">$pass</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">;</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>  <span class="nv">$db</span>   <span class="o">=</span> <span class="s2">&quot;sekolah&quot;</span><span class="p">;</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>  <span class="c1">// Membuat handle</span>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>  <span class="nv">$koneksi</span> <span class="o">=</span> <span class="nb">mysqli_connect</span><span class="p">(</span><span class="nv">$host</span><span class="p">,</span> <span class="nv">$user</span><span class="p">,</span> <span class="nv">$pass</span><span class="p">,</span> <span class="nv">$db</span><span class="p">);</span>
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>  <span class="c1">// Melakukan pengecekan koneksi</span>
+<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>  <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nv">$koneksi</span><span class="p">){</span>
+<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>      <span class="k">die</span><span class="p">(</span><span class="s2">&quot;Koneksi gagal: &quot;</span> <span class="o">.</span> <span class="nx">mysqli_connect_error</span><span class="p">());</span>
+<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>  <span class="p">}</span>
+<a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a>  <span class="cp">?&gt;</span>
+</code></pre></div></li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">Uji Coba</p>
+<ul>
+<li>Mari kita uji coba koneksi ke database dengan menjalankan perintah <code>php -S localhost:80</code> di terminal, dan jangan ditutup.</li>
+<li>Buka browser dan ketikkan <code>localhost/config.php</code></li>
+<li>Jika halaman kosong, itu tandanya skrip php berjalan lancar, bisa tersambung dengan database.</li>
+<li>Namun sebaliknya, jika muncul pesan error, berarti ada yang bermasalah.</li>
+<li>Cek lagi pengaturan <code>$password</code>, <code>$database</code>, <code>$koneksi</code> serta skrip dalam blok <code>if()</code></li>
+<li>Lalu jalankan ulang.</li>
+</ul>
+</div>
 <h3 id="menampilkan-data-read">Menampilkan Data (READ)</h3>
+<p>Ketikkan skrip berikut ke dalam file <code>index.php</code>, file inilah yang secara default akan diakses jika kita mengetikkan <code>localhost</code> pada browser.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="x">&lt;title&gt;Data Siswa&lt;/title&gt;</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="x">&lt;style&gt;</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="x">    table{</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="x">        border-collapse:collapse;</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="x">    }</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="x">    th, td{</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="x">        border: 1px solid black;</span>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="x">        padding:10px;</span>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="x">        text-align:center;</span>
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="x">    }</span>
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="x">    th{</span>
+<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a><span class="x">        background:#ccc;</span>
+<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a><span class="x">    }</span>
+<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a><span class="x">    a{</span>
+<a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a><span class="x">        text-decoration:none;</span>
+<a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a><span class="x">    }</span>
+<a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a><span class="x">&lt;/style&gt;</span>
+<a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a>
+<a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a><span class="x">&lt;h2&gt;Data Siswa&lt;/h2&gt;</span>
+<a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a><span class="x">&lt;p&gt;&lt;a href=&quot;tambah.php&quot;&gt; Tambah Siswa &lt;/a&gt;&lt;/p&gt;</span>
+<a id="__codelineno-7-21" name="__codelineno-7-21" href="#__codelineno-7-21"></a><span class="x">&lt;table&gt;</span>
+<a id="__codelineno-7-22" name="__codelineno-7-22" href="#__codelineno-7-22"></a><span class="x">    &lt;thead&gt;</span>
+<a id="__codelineno-7-23" name="__codelineno-7-23" href="#__codelineno-7-23"></a><span class="x">        &lt;th&gt;No&lt;/th&gt;</span>
+<a id="__codelineno-7-24" name="__codelineno-7-24" href="#__codelineno-7-24"></a><span class="x">        &lt;th&gt;Nama&lt;/th&gt;</span>
+<a id="__codelineno-7-25" name="__codelineno-7-25" href="#__codelineno-7-25"></a><span class="x">        &lt;th&gt;Kelas&lt;/th&gt;</span>
+<a id="__codelineno-7-26" name="__codelineno-7-26" href="#__codelineno-7-26"></a><span class="x">        &lt;th&gt;Jurusan&lt;/th&gt;</span>
+<a id="__codelineno-7-27" name="__codelineno-7-27" href="#__codelineno-7-27"></a><span class="x">        &lt;th&gt;Aksi&lt;/th&gt;</span>
+<a id="__codelineno-7-28" name="__codelineno-7-28" href="#__codelineno-7-28"></a><span class="x">    &lt;/thead&gt;</span>
+<a id="__codelineno-7-29" name="__codelineno-7-29" href="#__codelineno-7-29"></a><span class="x">    &lt;tbody&gt;</span>
+<a id="__codelineno-7-30" name="__codelineno-7-30" href="#__codelineno-7-30"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-7-31" name="__codelineno-7-31" href="#__codelineno-7-31"></a><span class="k">include</span> <span class="s2">&quot;config.php&quot;</span><span class="p">;</span>
+<a id="__codelineno-7-32" name="__codelineno-7-32" href="#__codelineno-7-32"></a><span class="nv">$query</span> <span class="o">=</span> <span class="s2">&quot;SELECT * FROM siswa&quot;</span><span class="p">;</span>
+<a id="__codelineno-7-33" name="__codelineno-7-33" href="#__codelineno-7-33"></a><span class="nv">$result</span> <span class="o">=</span> <span class="nx">mysqli_query</span><span class="p">(</span><span class="nv">$koneksi</span><span class="p">,</span> <span class="nv">$query</span><span class="p">);</span>
+<a id="__codelineno-7-34" name="__codelineno-7-34" href="#__codelineno-7-34"></a>
+<a id="__codelineno-7-35" name="__codelineno-7-35" href="#__codelineno-7-35"></a><span class="nv">$no</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span>
+<a id="__codelineno-7-36" name="__codelineno-7-36" href="#__codelineno-7-36"></a><span class="k">while</span><span class="p">(</span><span class="nv">$data</span> <span class="o">=</span> <span class="nx">mysqli_fetch_assoc</span><span class="p">(</span><span class="nv">$result</span><span class="p">)){</span>
+<a id="__codelineno-7-37" name="__codelineno-7-37" href="#__codelineno-7-37"></a><span class="cp">?&gt;</span>
+<a id="__codelineno-7-38" name="__codelineno-7-38" href="#__codelineno-7-38"></a><span class="x">        &lt;tr&gt;</span>
+<a id="__codelineno-7-39" name="__codelineno-7-39" href="#__codelineno-7-39"></a><span class="x">            &lt;td&gt;</span><span class="cp">&lt;?</span><span class="o">=</span><span class="nv">$no</span><span class="cp">?&gt;</span><span class="x">&lt;/td&gt;</span>
+<a id="__codelineno-7-40" name="__codelineno-7-40" href="#__codelineno-7-40"></a><span class="x">            &lt;td&gt;</span><span class="cp">&lt;?</span><span class="o">=</span><span class="nv">$data</span><span class="p">[</span><span class="s1">&#39;nama&#39;</span><span class="p">]</span><span class="cp">?&gt;</span><span class="x">&lt;/td&gt;</span>
+<a id="__codelineno-7-41" name="__codelineno-7-41" href="#__codelineno-7-41"></a><span class="x">            &lt;td&gt;</span><span class="cp">&lt;?</span><span class="o">=</span><span class="nv">$data</span><span class="p">[</span><span class="s1">&#39;kelas&#39;</span><span class="p">]</span><span class="cp">?&gt;</span><span class="x">&lt;/td&gt;</span>
+<a id="__codelineno-7-42" name="__codelineno-7-42" href="#__codelineno-7-42"></a><span class="x">            &lt;td&gt;</span><span class="cp">&lt;?</span><span class="o">=</span><span class="nv">$data</span><span class="p">[</span><span class="s1">&#39;jurusan&#39;</span><span class="p">]</span><span class="cp">?&gt;</span><span class="x">&lt;/td&gt;</span>
+<a id="__codelineno-7-43" name="__codelineno-7-43" href="#__codelineno-7-43"></a><span class="x">            &lt;td&gt;</span>
+<a id="__codelineno-7-44" name="__codelineno-7-44" href="#__codelineno-7-44"></a><span class="x">                &lt;a href=&quot;edit.php?id=</span><span class="cp">&lt;?</span><span class="o">=</span><span class="nv">$data</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">]</span><span class="cp">?&gt;</span><span class="x">&quot;&gt; Edit &lt;/a&gt; | </span>
+<a id="__codelineno-7-45" name="__codelineno-7-45" href="#__codelineno-7-45"></a><span class="x">                &lt;a href=&quot;hapus.php?id=</span><span class="cp">&lt;?</span><span class="o">=</span><span class="nv">$data</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">]</span><span class="cp">?&gt;</span><span class="x">&quot;&gt; Hapus &lt;/a&gt;</span>
+<a id="__codelineno-7-46" name="__codelineno-7-46" href="#__codelineno-7-46"></a><span class="x">            &lt;/td&gt;</span>
+<a id="__codelineno-7-47" name="__codelineno-7-47" href="#__codelineno-7-47"></a><span class="x">        &lt;/tr&gt;</span>
+<a id="__codelineno-7-48" name="__codelineno-7-48" href="#__codelineno-7-48"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-7-49" name="__codelineno-7-49" href="#__codelineno-7-49"></a><span class="nv">$no</span><span class="o">++</span><span class="p">;</span>
+<a id="__codelineno-7-50" name="__codelineno-7-50" href="#__codelineno-7-50"></a><span class="p">}</span>
+<a id="__codelineno-7-51" name="__codelineno-7-51" href="#__codelineno-7-51"></a><span class="cp">?&gt;</span>
+<a id="__codelineno-7-52" name="__codelineno-7-52" href="#__codelineno-7-52"></a><span class="x">    &lt;/tbody&gt;</span>
+<a id="__codelineno-7-53" name="__codelineno-7-53" href="#__codelineno-7-53"></a><span class="x">&lt;/table&gt;</span>
+</code></pre></div>
+<div class="admonition example">
+<p class="admonition-title">Uji Coba</p>
+<ul>
+<li>File tersebut berisi campuran skrip HTML, CSS dan PHP.</li>
+<li>Kode HTML dan CSS pada skrip berikut saya buat seminimal mungkin, dan tidak memenuhi kaidah penulisan yang ideal, namun secara fungsi sudah cukup.</li>
+<li>Pahami cara menampilkan data dari database dengan blok perulangan <code>while</code>, lalu buka <code>localhost</code> pada web browser.</li>
+</ul>
+</div>
 <h3 id="menambah-data-create">Menambah Data (CREATE)</h3>
 <h3 id="memperbaharui-data-update">Memperbaharui Data (UPDATE)</h3>
 <h3 id="menghapus-data-delete">Menghapus Data (DELETE)</h3>
